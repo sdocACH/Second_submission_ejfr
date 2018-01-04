@@ -1,0 +1,9 @@
+Überblick Ordnerstruktur:
+
+- bib: enthält bib-file und Unterordner 'pdf' mit verlinkten pdf-files
+- manuscript: enthält alles was zum Kompilieren des Documentes benötigt wird: die graphiken, das bib-file aus dem Ordner 'bib' 
+              und alle tex-files.
+- supplementary Material: Zusatzdocumente
+- pdfs: Alle pdf-Documentversionen, welche mit den Textfiles erzeugt wurden (Manuscript, Draft, Referee)
+- Reviews: Anworten auf die Reviews
+

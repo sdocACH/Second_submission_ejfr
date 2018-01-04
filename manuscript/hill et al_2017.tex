@@ -1,0 +1,171 @@
+%%%%%%%%%%%%%%%%%%%%%%% hill et al 2017.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is based on a general template file for the LaTeX package SVJour3
+% for Springer journals.                  Springer Heidelberg 2010/09/16
+%
+%
+% This template includes a few options for different layouts and
+% content for various journals. Please consult a previous issue of
+% your journal as needed.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% ------------------------------------------------------------------------------------------ %%
+
+%\documentclass[twocolumn]{svjour3}            % twocolumn
+\documentclass[twocolumn, draft]{svjour3}     % twocolumn
+%\documentclass[twocolumn, referee]{svjour3}   % twocolumn
+
+
+%% ---------------------------------------------------------------------------------------------------- %%
+%% insert here the call for the packages your document requires
+\usepackage{graphicx}
+\usepackage{mathptmx}      
+\usepackage{latexsym}
+\usepackage{cite}
+\usepackage{natbib}
+\usepackage{hyperref}
+ \hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue}
+\usepackage[utf8]{inputenc}
+\usepackage{subcaption}
+\usepackage{amsmath} 
+\usepackage{booktabs}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{longtable} 
+\usepackage{dcolumn}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{ulem} % Wort oder Satz durchstreichen mit \sout{text}
+\usepackage[labelfont=bf]{caption}
+\usepackage[font=footnotesize]{caption}
+\usepackage[font=footnotesize]{subcaption}
+
+
+% uncomment to enable line-numbering:
+\usepackage{lineno}
+\linenumbers
+
+%% ---------------------------------------------------------------------------------------------------- %%
+% please place your own definitions here:
+
+% reocurring terms:
+\newcommand{\bwi}{BWI3}
+\newcommand{\adjrsq}{adjusted $R^2$}
+\newcommand{\rmsecv}{RMSE$_{cv}$}
+\newcommand{\mha}{m$^3$/ha}
+
+\definecolor{mygreen}{rgb}{0.0, 0.7, 0.2}
+\newcommand{\added}[1]{\color{mygreen}{#1} \color{black}}
+\newcommand{\changed}[1]{\color{red}{#1} \color{black}}
+
+
+% Insert the name of "your journal" with
+\journalname{European Journal of Forest Research}
+
+
+%% ---------------------------------------------------------------------------------------------------- %%
+\begin{document}\sloppy
+
+\title{Combining canopy height and tree species map information for large scale timber volume estimations under strong heterogeneity of auxiliary data and variable sample plot sizes}
+
+\titlerunning{Combining canopy height and tree species information for large scale timber volume estimations}
+
+\author{Andreas Hill         \and
+        Henning Buddenbaum   \and
+        Daniel Mandallaz     
+}
+
+\authorrunning{A. Hill et al.}
+
+\institute{Andreas Hill \at
+              Department of Environmental Systems Science, ETH Zurich, Universitaetstrasse 22, 8092 Zurich, Switzerland\\
+              Tel.: +41 44 632 32 36\\
+              \email{andreas.hill@usys.ethz.ch}
+           \and
+           Henning Buddenbaum \at
+           Environmental Remote Sensing and Geoinformatics Department, Trier University, 54286 Trier, Germany\\
+           Tel.: +49 651 201 4729\\
+           \email{buddenbaum@uni-trier.de}   
+           \and
+           Daniel Mandallaz \at
+           Department of Environmental Systems Science, ETH Zurich, Universitaetstrasse 22, 8092 Zurich, Switzerland\\
+           Tel.: +41 44 632 88 35\\
+           \email{daniel.mandallaz@usys.ethz.ch}
+}
+
+\date{Received: date / Accepted: date}
+% The correct dates will be entered by the editor
+
+
+\maketitle
+
+\begin{abstract}
+A timber-volume regression model applicable to the entire forest area of the federal German state of Rhineland-Palatinate is identified using a combination of airborne laser scanning (ALS)-derived metrics and information from a satellite-based tree species classification map available on the federal state level. As is common in many forest inventory datasets, strong heterogeneity in the LiDAR data due to different acquisition dates and misclassifications in the tree species classification map had noticeable effects on the regression model's performance. This article specifically addresses techniques that improve the performance of ordinary least square regression models under such restricting conditions. We introduce a calibration technique to neutralize the effect of misclassifications in the tree species variable that originally caused a residual inflation of 5\%. Incorporating the calibrated tree species information improved the model accuracy by 5\% in adjusted $R^2$ and suggests the use of such information in forthcoming inventories. We also found that including ALS quality information as categorical variables within the regression model considerably mitigates issues with time lags between the ALS and terrestrial data acquisition and ALS quality variations (9\% increase in adjusted $R^2$). The model achieved an adjusted $R^2$ of 0.48 (RMSE$_{cv}$ of 137 m$^3$/ha) under incorporation of the tree species and ALS quality information, and was thus improved by 13\% (16 m$^3$/ha) compared to the simple model only containing ALS height metrics (adjusted $R^2$=0.35, RMSE$_{cv}$=153 m$^3$/ha).
+
+\keywords{OLS Regression \and standing timber volume \and ALS canopy height model \and  satellite-based tree species classification 
+          \and calibration \and forest inventory \and angle count sampling}
+          
+\end{abstract}
+
+% control spacing between text and equations:
+\setlength{\abovedisplayskip}{-1pt}
+\setlength{\abovedisplayshortskip}{-1pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+%% ------------------------------ Introduction -------------------------------------- %%
+
+\input{Introduction}
+
+
+%% ------------------------------ Materials & Methods ------------------------------- %%
+
+\input{Materials_and_Methods}
+
+
+%% ------------------------------ Results ------------------------------------------- %%
+
+\input{Results}
+
+
+%% ------------------------------ Discussion ---------------------------------------- %%
+
+\input{Discussion}
+
+
+%% ------------------------------ Conclusion ---------------------------------------- %%
+
+\input{Conclusions}\newpage
+
+
+%% ------------------------------ Acknowledgements ---------------------------------- %%
+
+\begin{acknowledgements}
+We want to express our gratitude to Prof. H. Heinimann (Chair of Land Use Engineering, ETH Zurich) for supporting this study. We want to explicitly thank Dr. Johannes Stoffels from the Environmental Sensing and Geoinformatics Group of Trier University for providing the tree species classification map as well as for constructive discussions when it came to interpreting the results. Special gratitude is owed to the State Forest Service of Rhineland-Palatinate, in particular Dr. Joachim Langshausen, Jürgen Dietz and Claus-Andreas Lessander, for collaboration and providing the forest inventory and geodata. We also want to thank Kai Husmann and Christoph Fischer from the Northwest German Forest Research Institution Göttingen for their advice in processing the terrestrial inventory data, and Alexander Massey and Michael Hill for proofreading. We also want to thank two anonymous reviewers for their valuable support to improve the initial manuscript.\\
+
+\noindent \textbf{Conflict of Interest} The authors declare that they have no conflict of interest.
+
+\end{acknowledgements}
+
+
+%% ------------------------------ Literature------ ---------------------------------- %%
+
+% BibTeX users please use one of
+\bibliographystyle{spbasic}      % basic style, author-year citations
+%\bibliographystyle{spmpsci}      % mathematics and physical sciences
+%\bibliographystyle{spphys}       % APS-like style for physics
+
+\bibliography{literature_regmod}   % name your BibTeX data base
+
+
+\end{document}
+% end of file

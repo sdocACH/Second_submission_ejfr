@@ -1,0 +1,177 @@
+\documentclass[a4paper, 12pt, titlepage]{scrartcl}
+\usepackage{authblk}
+
+%============================================ Define Titlepage =====================================================%
+     
+\author[*]{\large Andreas Hill}
+\author[ ]{\large Henning Buddenbaum}
+\author[ ]{\large Daniel Mandallaz}
+\affil[*]{\small Corresponding author: \underline{andreas.hill@usys.ethz.ch}}
+\renewcommand\Authands{, } 
+
+\date{\vspace{-0.8ex}}
+\title{\LARGE Combining canopy height and tree species information for large scale timber volume estimations under strong heterogeneity of auxiliary data and variable sample plot sizes \vspace{-1ex}}
+\subject{\vspace{-1.5cm} European Journal of Forest Research \\ \vspace{0.2cm} Supplementary Material \vspace{0.2cm} \vspace{-0.5cm}}
+
+
+%============================================ Load Packages ========================================================%
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=20mm,
+ top=25mm,
+ bottom=20mm
+ }
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{array} 
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage[explicit]{titlesec}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[labelfont=bf]{caption}
+\usepackage[font=footnotesize]{caption}
+\usepackage[font=footnotesize]{subcaption}
+\usepackage{rotating}
+\usepackage{longtable} 
+ 
+
+ 
+%============================================ Define Settings ========================================================%
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.2,0.7,0.25}
+
+
+\lstset{
+  backgroundcolor=\color{white},  
+  basicstyle=\footnotesize,        
+  breakatwhitespace=false,       
+  breaklines=true,                
+  captionpos=b,                    
+  commentstyle=\color{mygreen},    
+  deletekeywords={...},           
+  escapeinside={\%*}{*)},         
+  extendedchars=true,                         
+  keepspaces=true,                 
+  keywordstyle=\color{blue},       
+  language=Octave,                
+  morekeywords={*,...},            
+  numbers=left,                    
+  numbersep=5pt,                   
+  numberstyle=\tiny\color{mygray}, 
+  rulecolor=\color{black},        
+  showspaces=false,                
+  showstringspaces=false,          
+  showtabs=false,                 
+  stepnumber=2,                   
+  stringstyle=\color{mymauve},     
+  tabsize=2,                      
+    title=\lstname                 
+}
+
+\titlespacing{\section}{50pt}{1em}{1em}
+\titlespacing{\subsection}{14pt}{3em}{1.5em}
+\titlespacing{\subsubsection}{12pt}{2em}{1em}
+
+\setlength{\parindent}{1em}
+
+%============================================ Define personal commands=============================================%
+
+% reocurring terms:
+\newcommand{\bwi}{BWI3}
+\newcommand{\adjrsq}{adjusted $R^2$}
+\newcommand{\rmsecv}{RMSE$_{cv}$}
+\newcommand{\mha}{m$^3$/ha}
+
+%============================================ Start Document =======================================================%
+
+\begin{document}
+
+\maketitle 
+\newpage
+
+%============================================ SetUp directories ====================================================%
+
+\pagestyle{fancy}
+\fancyfoot[C]{\thepage}
+\setlength{\headsep}{10mm}
+
+\pagenumbering{arabic}
+\fancyhf{}
+\lhead{\footnotesize Hill et al. 2017: Combining canopy height and tree species information (Supplementary Material)}
+\rhead{\footnotesize \thepage}
+
+
+%============================================ Suppl. Material ========================================================%
+
+% ----------------------------------------------------------------------- %
+% 1
+% ----------------------------------------------------------------------- %
+
+\textbf{\large 1: Timber volume - height relationship on single tree level}
+
+\vfill
+\begin{figure}[h]
+\centering
+\subcaptionbox{Timber volume vs. tree height}{
+  \includegraphics[width=0.6\textwidth]{fig/volr_vs_height_trees.png}%
+  }\par\medskip
+\subcaptionbox{Timber volume of sample trees plotted against tree height and tree species used in the \bwi{} taper functions}{
+  \includegraphics[width=0.7\textwidth]{fig/volr_vs_hoehe_ba_tarif.png}
+  }\par\medskip
+\caption{Timber volume relationships on single tree level of all \bwi{} sample trees within RLP}
+\label{fig:rel_terr}
+\end{figure}
+\vfill
+
+\newpage
+
+% ----------------------------------------------------------------------- %
+% 2 
+% ----------------------------------------------------------------------- %
+
+
+\textbf{\large 2: Timber volume on plot level vs. predictor variables}
+
+\begin{figure}[H]
+\centering
+\subcaptionbox{Timber volume on plot level vs. LiDAR \textit{meanheight} stratified by the error-free \textit{treespecies} variable}{
+  \includegraphics[width=0.8\textwidth]{fig/true_species.png}%
+  }\par\medskip
+\subcaptionbox{Timber volume on plot level vs. LiDAR \textit{meanheight} stratified by calibrated \textit{treespecies} variable}{
+  \includegraphics[width=0.8\textwidth]{fig/calibrated_species.png}
+  }\par\medskip
+\caption{Timber volume on sample plot level stratified by the \textit{lidaryears} and \textit{treespecies}}
+\label{fig:tvol_vs_lyear_tspec}
+\end{figure}
+
+
+% ----------------------------------------------------------------------- %
+% 3
+% ----------------------------------------------------------------------- %
+
+\textbf{\large 3: Classification accuracies of $treespecies$ variable}
+\input{tab/spec_summary_mixed_calnocal_table.tex}\newpage
+
+
+
+% ----------------------------------------------------------------------- %
+% 4 & 5
+% ----------------------------------------------------------------------- %
+
+\textbf{\large 4: Model accuracies}\\
+
+\input{tab/mod_table.tex}\newpage
+
+\input{tab/mod_cal_table.tex}
+
+
+%==================================================================================================================%
+\end{document}

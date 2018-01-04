@@ -1,0 +1,20 @@
+% \begingroup\fontsize{10pt}{11pt}\selectfont
+\begin{table*}
+\centering
+\caption{Accuracy metrics for submodels of final OLS regression model} 
+\label{tab:modacc_modterms}
+\begin{tabular}{llrrr}
+  \hline
+model terms & model & parameters & $R^2_{adj}$ & \rmsecv{} \\ 
+  \hline
+meanheight + stddev + meanheight$^2$ + \\ treespecies + lidaryear + meanheight:treespecies + \\ meanheight:lidaryear + meanheight:stddev + \\ stddev:lidaryear & final model &  39 & 0.48 & 137.49 \\ \\
+  meanheight + stddev + meanheight$^2$ + \\ meanheight:stddev & submodel 1 &   5 & 0.35 & 153.02 \\ \\
+  meanheight + stddev + meanheight$^2$ + \\ lidaryear + meanheight:lidaryear + \\ meanheight:stddev + stddev:lidaryear & submodel 2 &  29 & 0.44 & 142.82 \\ \\
+  meanheight + stddev + meanheight$^2$ + \\ treespecies + meanheight:treespecies + \\ meanheight:stddev & submodel 3 &  15 & 0.40 & 142.82 \\ 
+   \hline
+\hline
+\end{tabular}
+\end{table*}
+%\endgroup
+
+
