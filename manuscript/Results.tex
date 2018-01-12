@@ -8,24 +8,20 @@
 
 \subsubsection*{Effect of Support Size and Threshold}
 
-Before calibration, the lowest user's accuracies ($UA$) for most tree species were realized using high thresholds of 80\% and 100\% for deciding the main tree species on the plot level (figure \ref{fig:supp_tspec_res}). A plausible reason for this is that raising the threshold to higher values (e.g. 80\%, 100\%) distinctively increases the probability of the reference class (based on the sample trees of the sample location) to be assigned as class 'Mixed', while the much coarser spatial resolution of the tree species map causes the $predicted$ class to remain classified as one of the five tree species. However, as the support size is  increased, so does the number of tree species raster cells to be evaluated at the sample location, thereby increasing the probability that the predicted class will be 'Mixed'. For this reason, most tree species exhibit an increase in user's accuracy under higher thresholds with higher support sizes. This scale-threshold dependency of the user's accuracy particularly affects tree species that most commonly occur in mixed forest stands in Rhineland-Palatinate (\textit{Scots pine}, $oak$ and $beech$), whereas the user's accuracies for tree species that are mostly prominent in pure forest stands ($spruce$, \textit{Douglas fir}) logically turned out to be much more robust to changes in the thresholds and support sizes.\par
+\changed{The lowest user's accuracies ($UA$) for the uncalibrated tree species variable were mostly realized using high thresholds of 80\% and 100\% (figure \ref{fig:cos_oaa_ua}).} A plausible reason for this is that raising the threshold to higher values (e.g. 80\%, 100\%) distinctively increases the probability of the reference class (based on the sample trees of the sample location) to be assigned as class 'Mixed', while the much coarser spatial resolution of the tree species map causes the $predicted$ class to remain classified as one of the five tree species. However, as the support size is  increased, so does the number of tree species raster cells to be evaluated at the sample location, thereby increasing the probability that the predicted class will be 'Mixed'. For this reason, most tree species exhibit an increase in user's accuracy under higher thresholds with higher support sizes. This scale-threshold dependency of the user's accuracy particularly affects tree species that most commonly occur in mixed forest stands in Rhineland-Palatinate (\textit{Scots pine}, $oak$ and $beech$), whereas the user's accuracies for tree species that are mostly prominent in pure forest stands ($spruce$, \textit{Douglas fir}) logically turned out to be much more robust to changes in the thresholds and support sizes.\par
 Among the uncalibrated tree species predictions, $beech$ and $spruce$ produced the best predictions achieving UAs of up to 70\% and 80\%.  Although the predictions for \textit{Douglas fir} and \textit{Scots pine} generally performed less well than $beech$ and $spruce$, similar UAs can be produced by adjusting the threshold and support choices. UAs for $oak$ never performed better than 50\%. A detailed table of the user's and overall accuracies is provided in Online Resource 3.
 
-\begin{figure}[H]
-\centering
-\subcaptionbox{\label{fig:supp_tspec_res}}{%
-  \includegraphics[width=0.4\textwidth]{cos_tspec_mixed_cal_nocal.png}%
-  }\par\medskip
-\subcaptionbox{\label{fig:supp_tspec_oaa_res}}{%
-  \includegraphics[width=0.4\textwidth]{cos_tspec_oaa_mixed.png}%
-  }\par\medskip
-\caption{Classification accuracy for the main tree species of a sample location \textit{before} and \textit{after} calibration: \textit{a)} user's accuracies. \textit{b)} overall accuracies. $n$: number of validation data per class}
-\label{fig:cos_oaa_ua}
+\begin{figure}
+	\centering
+	\resizebox{0.78\hsize}{!}{\includegraphics{oaa_and_cos_tspec_mixed_cal_nocal.png}}
+    \caption{Classification accuracy for the main tree species of a sample location \textit{before} and \textit{after} calibration: \textit{top)} overall accuracies. \textit{bottom)} user's accuracies. \textit{ind}: plot individual support sizes.}
+	\label{fig:cos_oaa_ua}
 \end{figure}
 
 
-\subsubsection*{Effect of Calibration}
-Calibration substantially diminished the effect of the scale-threshold dependency for the five tree species and also increased the UAs for \textit{Scots pine} and $oak$. Whereas the UA level of $spruce$ remained unchanged, the UAs for $beech$ were found to be slightly lower after calibration. The overall accuracy under each support choice was always considerably increased by calibrating the tree species prediction (figure \ref{fig:supp_tspec_oaa_res}). With respect to the calculated random forest models, the initial tree species prediction ($treespecies$) and the information about the growing region ($wgb$) turned out to be the most valuable information, followed by the estimated proportion of coniferous trees ($prop.conif$) and the mean canopy height ($meanheight$).
+
+\subsubsection*{\changed{Calibration}}
+Calibration substantially diminished the effect of the scale-threshold dependency for the five tree species and also increased the UAs for \textit{Scots pine} and $oak$. \changed{Whereas the UAs for $beech$ and $spruce$ were found to be slightly lower after calibration}, the overall accuracy under each support choice was always considerably increased by calibrating the tree species prediction (figure \ref{fig:cos_oaa_ua}). With respect to the calculated random forest models, the initial tree species prediction ($treespecies$) and the information about the growing region ($wgb$) turned out to be the most valuable information, followed by the estimated proportion of coniferous trees ($prop.conif$) and the mean canopy height ($meanheight$).
 
 
 % ----------------------------------------------------------------------- %
@@ -36,12 +32,12 @@ Calibration substantially diminished the effect of the scale-threshold dependenc
 
 \subsubsection*{Effect of Support Size and Threshold}
 
-Figure \ref{fig:supp_perf_res} shows the accuracies of the regression model (equation \ref{eq:chmtspec_fullmod_term}) achieved under all possible combinations of support sizes for the auxiliary data. The stepwise selection procedure always included all considered single and interaction terms. In terms of \adjrsq{} and \rmsecv{}, the analysis revealed that the choice of the CHM support size controls the overall level of the model's accuracy. The information about the main plot tree species can then be used to further improve the model fit under suitable $treespecies$ support and threshold settings. When using the uncalibrated $treespecies$ variable, an increase of the $treespecies$ support size causes an increase in the model performance if low thresholds are used, whereas high thresholds (80\%, 100\%) cause a decrease in the model performance. This threshold-dependency could be removed by calibrating the $treespecies$ variable. The highest \adjrsq{} and the lowest \rmsecv{} were realized using the $q50$ support for the CHM variables in combination with the $q100$ support and a threshold of 100\% for the calibrated $treespecies$ variable (\adjrsq{}=0.48 and \rmsecv{}=137 \mha{}). However, various support and threshold combinations for the CHM and $treespecies$ variables can be used to yield almost identical \rmsecv{} and \adjrsq{} values. A detailed table of the model accuracies is given in Online Resource 4.
+Figure \ref{fig:supp_perf_res} shows the accuracies of the regression model (equation \ref{eq:chmtspec_fullmod_term}) achieved under all possible combinations of support sizes for the auxiliary data. The stepwise selection procedure always included all considered single and interaction terms. In terms of \adjrsq{} and \rmsecv{}, the analysis revealed that the choice of the CHM support size controls the overall level of the model's accuracy. The information about the main plot tree species can then be used to further improve the model fit under suitable $treespecies$ support and threshold settings. When using the uncalibrated $treespecies$ variable, an increase of the $treespecies$ support size causes an increase in the model performance if low thresholds are used, whereas high thresholds (80\%, 100\%) cause a decrease in the model performance. This threshold-dependency could be removed by calibrating the $treespecies$ variable. The highest \adjrsq{} and the lowest \rmsecv{} were realized using the $q50$ support for both the CHM and calibrated $treespecies$ variables in combination with a $treespecies$ threshold of 100\%, resulting in (\adjrsq{} of 0.48 and \rmsecv{} of 136.62 m$^2$/ha (43.8\%). However, various support and threshold combinations for the CHM and $treespecies$ variables can be used to yield almost identical \rmsecv{} and \adjrsq{} values. A detailed table of the model accuracies is given in Online Resource 4.
 
 \begin{figure*}
 \centering
 \resizebox{0.8\hsize}{!}{\includegraphics*{cos_cal_nocal_bw.png}}
-\caption{10-fold \rmsecv{} and \adjrsq{} realized under various support choices for the CHM and $tree species$ explanatory variables}
+\caption{5-fold \rmsecv{}[\%] and \adjrsq{} realized under various support choices for the CHM and $tree species$ explanatory variables}
 \label{fig:supp_perf_res}
 \end{figure*}
 
@@ -49,14 +45,13 @@ Figure \ref{fig:supp_perf_res} shows the accuracies of the regression model (equ
 
 \subsubsection*{Effect of Misclassifications}
 
-We can assess magnitude of the misclassification effect by comparing the \adjrsq{}'s of models that use the predicted tree species (calibrated and uncalibrated) as an explanatory variable to models that use the error-free tree species variables acquired from the terrestrial survey. Note that only the model with the predicted tree species variables can be applied to additional sample locations where no terrestrial survey has been carried out. Figure \ref{fig:supp_r2_calnocal} provides a comparison of the \adjrsq{} achieved under the use of the error-free tree species predictor variable against the \adjrsq{} realized under the use of the tree species variable containing missclassifications. This analysis was carried out for all models that were analysed in section \ref{sec:supp_chm_tspec_res}, i.e. for all possible support and threshold combinations for the CHM and $treespecies$ predictor variables.\\
-As expected, the highest \adjrsq{} for every evaluated model was always achieved using the error-free tree species variable, whereas the missclassifications in the tree species variable led to a systematic decrease of the model accuracy. This is in agreement with the potential effects of erroneous explanatory variables discussed in \citet{carroll2006} and \citet{gustafson2003}, i.e. an increase of variability (noise) in the data that can increase the amount of unexplainable variance and thereby reduce the model accuracy.\\
-The calibration of the initially predicted main plot tree species using the random forest classification algorithm (section \ref{sec:tspecclass}) turned out to not only improve the classification accuracies (section \ref{sec:supp_tspec_res}), but also to considerably decrease the effect of the missclassifications on the regression model predictions and accuracy. Figure \ref{fig:supp_r2_calnocal} ($right$) shows that the \adjrsq{} under the actual and the calibrated predicted tree species variable are in general much closer to, and in many cases even on the identity line. Whereas the misclassifications in the uncalibrated $treespecies$ variable led to a residual inflation of 1\% - 5\%, it was only between 0\% and 1\% after calibration. Further analysis revealed that when using the calibrated $treespecies$ variables, the regression coefficients were almost identical to the ones received using the actual main plot tree species.
+\changed{We accessed the magnitude of the misclassification effect for all models that were analysed in section \ref{sec:supp_chm_tspec_res}, i.e. for all possible support and threshold combinations for the CHM and $treespecies$ predictor variables. We first compared the \adjrsq{}'s of each model when using the uncalibrated treespecies predictor variable against the \adjrsq{}'s of the respective model when using the actual, i.e. error-free species predictor variable. We then did the same comparison for the model using the calibrated treespecies predictor variable. Figure \ref{fig:supp_r2_calnocal} provides a visualization of this comparison. Note that only the model with the predicted tree species variables can be applied to additional sample locations where no terrestrial survey has been carried out.}\\
+As expected, the highest \adjrsq{} for every evaluated model was always achieved using the error-free tree species variable, whereas the missclassifications in the tree species variable led to a systematic decrease of the model accuracy. The calibration of the initially predicted main plot tree species using the random forest classification algorithm (section \ref{sec:tspecclass}) turned out to not only improve the classification accuracies (section \ref{sec:supp_tspec_res}), but also to considerably decrease the effect of the missclassifications on the regression model predictions and accuracy. Figure \ref{fig:supp_r2_calnocal} ($right$) shows that the \adjrsq{} under the actual and the calibrated predicted tree species variable are in general much closer to, and in many cases even on the identity line. \added{The differentiation into two distinct point clouds results from the poor model performance under support size $q100$ for the CHM variables (i.e. the $lower$ point cloud).} Whereas the misclassifications in the uncalibrated $treespecies$ variable led to a residual inflation of \changed{0.01 - 0.05}, it was only between \changed{0 and 0.01} after calibration. Further analysis revealed that when using the calibrated $treespecies$ variables, the regression coefficients were almost identical to the ones received using the actual main plot tree species.
 
 \begin{figure*}
 \centering
 \resizebox{0.65\hsize}{!}{\includegraphics*{cos_r2_cal_vs_nocal.png}}
-\caption{Effect on the \adjrsq{} when substituting the actual main tree species with the predicted  main tree species of a sample plot. The differentiation into two distinct point clouds results from the poor model performance under support size $q100$ for the CHM variables (i.e. the $lower$ point cloud). The \textit{dotted} line tracks the the model with the highest \adjrsq{} under the use of the error-free \textit{treespecies} variable}
+\caption{Effect on the \adjrsq{} when substituting the actual main tree species with the predicted  main tree species of a sample plot. The \textit{dotted} line tracks the the model with the highest \adjrsq{} under the use of the error-free \textit{treespecies} variable. Semi-transparent colours for the data points are used to visualize overlap.}
 \label{fig:supp_r2_calnocal}
 \end{figure*}
 
@@ -66,73 +61,59 @@ The calibration of the initially predicted main plot tree species using the rand
 \subsection{Final Regression Model}
 \label{sec:regmod_final}
 
-In order to address research questions 1 and 2 (i.e. the gain in model accuracy by tree species information and effect of heterogeneity in the LiDAR data), we investigated the model properties in more detail. For this purpose, we decided to use the support settings of $q50$ for both auxiliary data with a threshold of 100\% for the tree species variable as the regression model of choice. The reason for this choice was that \textit{a)} the model provided almost the highest \adjrsq{} among all validated models while reducing the data handling complexity for upcoming applications (i.e. identical support sizes for all remote sensing data) and \textit{b)} the calibration neutralized the effects of misclassifications on the model predictions. The interaction term between $meanheight^2$ and $treespecies$ (i.e. considering separate curvatures for each tree species) turned out not to have any influence on the model accuracy and was thus dropped, resulting in an \adjrsq{} of 0.49 and \rmsecv{} of 132.12 m$^2$/ha.
+In order to address research questions 1 and 2 (i.e. the gain in model accuracy by tree species information and effect of heterogeneity in the ALS data), we investigated the model properties in more detail. For this purpose, we decided to use the best found model that was achieved under the support settings of $q50$ for both auxiliary data with a threshold of 100\% for the tree species variable as the regression model of choice. \changed{The reason for inspecting this model was that \textit{a)} the model provided the highest \adjrsq{} among all validated models while reducing the data handling complexity for upcoming applications (i.e. identical support sizes for all remote sensing data) and \textit{b)} the calibration neutralized the effects of misclassifications on the model predictions. The interaction term between $meanheight^2$ and $treespecies$ (i.e. considering separate curvatures for each tree species) turned out not to have a significant influence on the model accuracy and was thus dropped, resulting in an \adjrsq{} of 0.48 and a slightly increased \rmsecv{} of 140.62 m$^2$/ha (46.7\%).}\par
+\added{We also conducted an analysis for detecting influential data points or outliers for the final regression model. We here considered the commonly applied criteria of leverages and Cook's Distance as amongst others described in \citet[p. 160-167]{fahrmeir2013}. The critical threshold of $2p/n$ (i.e. twice the average of the hat matrix' diagonal entries) was exceeded by 10\% of the observations. However, only 3\% of these leverage points were assigned to studentized residuals $>$ 1 or $<$ -1. Removing these 3\% of observations from the data set and refitting the model lead to an \adjrsq{} of 0.494 compared to 0.485 when including them. Additionally, Cook's Distance values $D_i$ did not exceed a value of 0.019, and were thus far apart from the commonly used critical threshold of $D_i >$ 0.5 that indicate a considerably change of the regression model results when omitting them. We thus decided not to remove any further observations from the modelling dataset.}
 
 \subsubsection*{Interpretation of Final Regression Model}
 \label{sec:prop_regmod_final}
-Figure \ref{fig:predlines_tspec} provides a visualisation of the tree species prediction functions separated by the LiDAR acquisition years. Sample plots classified as $oak$ and \textit{Scots pine} revealed to have an almost identical relationship (nearly identical slopes) for the mean canopy height - timber volume relationship. They only differ by a marginally higher intercept for \textit{Scots pine} plots, meaning that given the same mean canopy height a sample plot dominated by \textit{Scots pine} yields a marginally higher timber volume on the plot level than a plot dominated by $oak$. $Beech$-dominated sample plots tend to achieve a higher timber volume than $oak$ and \textit{Scots pine} for canopy heights below 20 meters, but realize the lowest timber volumes for canopy heights above 20 metres. Sample plots dominated by any of the remaining coniferous tree species (\textit{Douglas fir}, $spruce$) revealed to have higher slopes than broadleaf classified plots. This indicates that given the same mean canopy height, sample plots dominated by \textit{Douglas fir} and $spruce$ yield higher timber volume values than broadleaf- or \textit{Scots pine} dominated sample plots, and this difference becomes more pronounced with increasing mean canopy heights. Within the group of coniferous-dominated sample plots, $spruce$ turned out to have the highest slope, thereby yielding the highest timber volume values for mean canopy heights above 15 meters. An undesired characteristic of the model is that the predicted timber volume can in some cases ($<$ 1\%) take negative values for low canopy heights (e.g. for $spruce$-dominated plots with \textit{meanheight} below 5 meters and $stddev$ of 4 meters). However, we chose not to use a log-transformation of the response variable. Doing so would have prevented the subsequent calculation of the g-weight variance of the model assisted estimators \citep{mandallaz2013a, mandallaz2013b}, which is only possible for response variables on the original scale.
+Figure \ref{fig:predlines_tspec} provides a visualisation of the tree species prediction functions separated by the ALS acquisition years. Sample plots classified as $oak$ and \textit{Scots pine} revealed to have an almost identical relationship (nearly identical slopes) for the mean canopy height - timber volume relationship. They only differ by a marginally higher intercept for \textit{Scots pine} plots, meaning that given the same mean canopy height a sample plot dominated by \textit{Scots pine} yields a marginally higher timber volume on the plot level than a plot dominated by $oak$. $Beech$-dominated sample plots tend to achieve a higher timber volume than $oak$ and \textit{Scots pine} for canopy heights below 20 meters, but realize the lowest timber volumes for canopy heights above 20 metres. Sample plots dominated by any of the remaining coniferous tree species (\textit{Douglas fir}, $spruce$) revealed to have higher slopes than broadleaf classified plots. This indicates that given the same mean canopy height, sample plots dominated by \textit{Douglas fir} and $spruce$ yield higher timber volume values than broadleaf- or \textit{Scots pine} dominated sample plots, and this difference becomes more pronounced with increasing mean canopy heights. Within the group of coniferous-dominated sample plots, $spruce$ turned out to have the highest slope, thereby yielding the highest timber volume values for mean canopy heights above 15 meters. An undesired characteristic of the model is that the predicted timber volume can in some cases ($<$ 1\%) take negative values for low canopy heights (e.g. for $spruce$-dominated plots with \textit{meanheight} below 5 meters and $stddev$ of 4 meters). \changed{However, we chose not to use a log-transformation of the response variable. Doing so would have prevented the subsequent calculation of the g-weight variance of the model-assisted estimators \citep{mandallaz2013a, mandallaz2013b}, which is only possible for response variables on the original scale. The g-weight variance provides the benefit of a better variance estimate for internal models by considering the dependency of the regression coefficients on the realized sample. The rare occurrence of negative predictions were however not considered to have an influence on subsequent model-assisted estimates due to averaging multiple predictions within given spatial domains.}
 
-\begin{figure*}[h]
-\centering
-\resizebox{0.8\hsize}{!}{\includegraphics*{predlines_tspecaux_cal.png}}
-\caption{Visualization of the timber volume prediction function (\textit{final regression model}) on sample plot level for each main plot tree species and LiDAR acquisition year. For visualization purposes, the predictor variable $stddev$ was set to its average value within the respective \textit{treespecies} and \textit{lidaryear} group}. The terrestrially observed timber volume values are plotted in the background.
-\label{fig:predlines_tspec}
-\end{figure*}
-
-
-\subsubsection*{Effect of Time-Lags and Heterogeneity in LiDAR Data}
-
-Incorporating the LiDAR acquisition year as a categorical variable ($lidaryear$) in the regression model substantially accounted for the variability in the data introduced by \textit{a)} the time-lags between LiDAR acquisition and terrestrial survey, and \textit{b)} variation in LiDAR data quality which are due to sensor- and post processing techniques (table \ref{tab:modacc_modterms}). Whereas the \adjrsq{} for the regression model without considering the LiDAR acquisition year as additional predictor variable was 0.35 (0.40 including the tree species variable), the stratification by the LiDAR acquisition year led to \adjrsq{} of 0.44 (0.48), thereby increasing the proportion of explained variance by up to 8\%.
 
 \begin{figure}[H]
-\centering
-\resizebox{1\hsize}{!}{\includegraphics*{r2adj_in_lyears.png}}
-\caption{$R^2$ of the final regression model achieved $within$ the LiDAR acquisition year strata. 
-         \textit{Grey points}: $R^2$ of submodel 1 (no stratification according to LiDAR acquisition year or tree species). 
-         $Crosses$: $R^2$ of submodel 2 ($without$ tree species stratification). 
-         \textit{Filled triangles}: $R^2$ of final model using the $uncalibrated$ tree species variable.
-         \textit{Empty triangles}: $R^2$ of final model using the $calibrated$ tree species variable.
-         $Diamonds$: $R^2$ achieved using the error-free tree species variable (derived from sample trees).
-         \textit{Dotted line}: Overall \adjrsq{} of submodel 2.
-         \textit{Solid line}: Overall \adjrsq{} of final model using the $calibrated$ tree species variable.
-         \textit{Two-dashed line}: Overall \adjrsq{} of final model using the \textit{error-free} tree species variable}
-\label{fig:r2adj_in_lyears}
+	\centering
+	\resizebox{1\hsize}{!}{\includegraphics*{r2adj_in_lyears.png}}
+	\caption{$R^2$-values of the final regression model, submodel 1 and submodel 2 achieved $within$ the ALS acquisition year strata.}
+	\label{fig:r2adj_in_lyears}
 \end{figure}
+
+%\begin{figure*}[h]
+%\centering
+%\resizebox{0.8\hsize}{!}{\includegraphics*{predlines_tspecaux_cal.png}}
+%\caption{Visualization of the timber volume prediction function (\textit{final regression model}) on sample plot level for each main plot tree species and ALS acquisition year. For visualization purposes, the predictor variable $stddev$ was set to its average value within the respective \textit{treespecies} and \textit{ALSyear} categories. The terrestrially observed timber volume values are plotted in the background.}
+%\label{fig:predlines_tspec}
+%\end{figure*}
+
+
+\subsubsection*{Effect of Time-Lags and Heterogeneity in ALS Data}
+
+Incorporating the ALS acquisition year as a categorical variable ($ALSyear$) in the regression model substantially accounted for the variability in the data introduced by \textit{a)} the time-lags between ALS acquisition and terrestrial survey, and \textit{b)} variation in ALS data quality which are due to sensor- and post processing techniques (table \ref{tab:modacc_modterms}). \changed{Whereas the \adjrsq{} for the regression model without considering the ALS acquisition year as additional predictor variable (\textit{submodel 1}) was 0.36, it could already been increased to 0.40 by including the tree species variable (\textit{submodel 2}). A further stratification by the ALS acquisition year led to \adjrsq{} of 0.45 for \textit{submodel 1} and of 0.48 for \textit{submodel 3}, thereby increasing the proportion of explained variance by up to 0.08.}
+
+%\begin{figure}[H]
+%\centering
+%\resizebox{1\hsize}{!}{\includegraphics*{r2adj_in_lyears.png}}
+%\caption{$R^2$-values of the final regression model, submodel 1 and submodel 2 achieved $within$ the ALS acquisition year strata.}
+%\label{fig:r2adj_in_lyears}
+%\end{figure}
+
+\begin{figure*}[h]
+	\centering
+	\resizebox{0.8\hsize}{!}{\includegraphics*{predlines_tspecaux_cal.png}}
+	\caption{Visualization of the timber volume prediction function (\textit{final regression model}) on sample plot level for each main plot tree species and ALS acquisition year. For visualization purposes, the predictor variable $stddev$ was set to its average value within the respective \textit{treespecies} and \textit{ALSyear} categories. The terrestrially observed timber volume values are plotted in the background.}
+	\label{fig:predlines_tspec}
+\end{figure*}
 
 \input{mod_r2_lyearstrata_table.tex}
 
-We further analysed the model residuals within each LiDAR acquisition year (within-group variation) for the final model and nested submodels. It turned out that the $R^2$ vary distinctly between the LiDAR acquisition year strata (figure \ref{fig:r2adj_in_lyears}). More precisely, the within-group $R^2$ can be higher and lower than the overall $R^2$ of the respective model. Figure \ref{fig:r2adj_in_lyears} shows that a stratification according to the LiDAR acquisition years (submodel 2) can already increase the $R^2$ in most acquisition year strata, compared to the basic model using only the LiDAR height metrics as predictor variables (submodel 1). In some LiDAR acquisition year strata (i.e. 2007, 2008), this increase in $R^2$ even reached 7\% - 11\%. The accuracies for the final model are also given in table \ref{tab:adj_r2_within}.
+We further analysed the model residuals within each ALS acquisition year (within-group variation) for the final model and nested submodels. It turned out that the $R^2$ vary distinctly between the ALS acquisition year strata (figure \ref{fig:r2adj_in_lyears}). More precisely, the within-group $R^2$ can be higher and lower than the overall $R^2$ of the respective model. Figure \ref{fig:r2adj_in_lyears} shows that a stratification according to the ALS acquisition years (submodel 2) can already increase the $R^2$ in most acquisition year strata, compared to the basic model using only the ALS height metrics as predictor variables (submodel 1). \changed{In the ALS acquisition year strata 2007, this increase in $R^2$ even reached 0.08. The accuracies for the final model are also given in table \ref{tab:adj_r2_within}.}
 
 
 \subsubsection*{Added Value of Tree Species Map Information}
 
 %% Second submission version:
-Introducing the predicted main tree species of a sample plot as an additional categorical variable to submodel 2 yielded a further 4\% increase in the \adjrsq{} (table \ref{tab:modacc_modterms}). This improvement was even more pronounced in LiDAR acquisition years close or identical to the year of the terrestrial inventory (up to 7\% increase in $R^2$, figure \ref{fig:r2adj_in_lyears}. The analysis illustrated once more that misclassifications in the tree species variable generally reduce model accuracy compared to using error-free tree species information. The residual inflations caused by the misclassifications in the uncalibrated $treespecies$ variable within the $lidaryear$ strata were up to 5\%. However, the calibration was able to substantially decrease or even remove the effects of misclassifications on the model accuracy in all LiDAR acquisition year strata.
+\changed{Introducing the predicted main tree species of a sample plot as an additional categorical variable to submodel 2 yielded a further 3\% increase in the \adjrsq{} (table \ref{tab:modacc_modterms}). The improvement was particularly pronounced in ALS acquisition years close or identical to the year of the terrestrial inventory. We observed an increase in $R^2$ of 6\% for ALS acquisition year 2012, and 7\% for ALS acquisition year 2011 (figure \ref{fig:r2adj_in_lyears}).} The analysis illustrated once more that misclassifications in the tree species variable generally reduce model accuracy compared to using error-free tree species information. The residual inflations caused by the misclassifications in the uncalibrated $treespecies$ variable within the $ALSyear$ strata were up to 5\%. However, the calibration was able to substantially decrease or even remove the effects of misclassifications on the model accuracy in all ALS acquisition year strata.
 
 %% OLD (first submission version):
-%Using the predicted main tree species of a sample plot as an additional categorical variable yielded a further increase of the model accuracy of 5\% in the $R^2$ (table \ref{tab:modacc_modterms}). This improvement was particularly pronounced in LiDAR acquisition years that are close or identical to the year of the terrestrial inventory ($R^2$ of 0.55 in 2011 and 2012, figure \ref{fig:r2adj_in_lyears}). The analysis illustrated once more that misclassifications in the tree species variable generally reduce model accuracy compared to using error-free tree species information. The residual inflations caused by the misclassifications in the uncalibrated $treespecies$ variable within the $lidaryear$ strata were up to 5\%. However, the calibration was able to substantially decrease or even remove the effects of misclassifications on the model accuracy in all LiDAR acquisition year strata.
+%Using the predicted main tree species of a sample plot as an additional categorical variable yielded a further increase of the model accuracy of 5\% in the $R^2$ (table \ref{tab:modacc_modterms}). This improvement was particularly pronounced in ALS acquisition years that are close or identical to the year of the terrestrial inventory ($R^2$ of 0.55 in 2011 and 2012, figure \ref{fig:r2adj_in_lyears}). The analysis illustrated once more that misclassifications in the tree species variable generally reduce model accuracy compared to using error-free tree species information. The residual inflations caused by the misclassifications in the uncalibrated $treespecies$ variable within the $ALSyear$ strata were up to 5\%. However, the calibration was able to substantially decrease or even remove the effects of misclassifications on the model accuracy in all ALS acquisition year strata.
 
 %format: onecolumn
 \input{modacc_modterms.tex}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

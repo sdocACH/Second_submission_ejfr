@@ -18,9 +18,10 @@
 \usepackage{geometry}
  \geometry{
  a4paper,
- left=20mm,
+ right=10mm,
+ left=10mm,
  top=25mm,
- bottom=20mm
+ bottom=15mm
  }
 \usepackage{hyperref}
 \usepackage[english]{babel}
@@ -118,7 +119,7 @@
 \textbf{\large 1: Timber volume - height relationship on single tree level}
 
 \vfill
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \subcaptionbox{Timber volume vs. tree height}{
   \includegraphics[width=0.6\textwidth]{fig/volr_vs_height_trees.png}%
@@ -143,24 +144,25 @@
 \begin{figure}[H]
 \centering
 \subcaptionbox{Timber volume on plot level vs. LiDAR \textit{meanheight} stratified by the error-free \textit{treespecies} variable}{
-  \includegraphics[width=0.8\textwidth]{fig/true_species.png}%
+  \includegraphics[width=0.7\textwidth]{fig/true_species.png}%
   }\par\medskip
 \subcaptionbox{Timber volume on plot level vs. LiDAR \textit{meanheight} stratified by calibrated \textit{treespecies} variable}{
-  \includegraphics[width=0.8\textwidth]{fig/calibrated_species.png}
+  \includegraphics[width=0.7\textwidth]{fig/calibrated_species.png}
   }\par\medskip
 \caption{Timber volume on sample plot level stratified by the \textit{lidaryears} and \textit{treespecies}}
 \label{fig:tvol_vs_lyear_tspec}
 \end{figure}
 
+\newpage
 
 % ----------------------------------------------------------------------- %
 % 3
 % ----------------------------------------------------------------------- %
 
 \textbf{\large 3: Classification accuracies of $treespecies$ variable}
-\input{tab/spec_summary_mixed_calnocal_table.tex}\newpage
+\input{tab/spec_summary_mixed_calnocal_table.tex}
 
-
+\newpage
 
 % ----------------------------------------------------------------------- %
 % 4 & 5

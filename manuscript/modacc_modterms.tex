@@ -1,16 +1,17 @@
-% \begingroup\fontsize{10pt}{11pt}\selectfont
+% latex table generated in R 3.4.2 by xtable 1.8-2 package
+% Sun Jan 07 17:11:26 2018
 \begin{table*}
-\centering
-\caption{Accuracy metrics for submodels of final OLS regression model} 
-\label{tab:modacc_modterms}
-\begin{tabular}{llrrr}
+	\centering
+	\caption{Accuracy metrics for submodels of final OLS regression model. Interaction terms are indicated by ':'.} 
+	\label{tab:modacc_modterms}
+	\begin{tabular}{llrrrr}
   \hline
-model terms & model & parameters & $R^2_{adj}$ & \rmsecv{} \\ 
+model terms & model & parameters & $R^2_{adj}$ & $RMSE_{cv}$ & $RMSE_{cv}\%$ \\ 
   \hline
-meanheight + stddev + meanheight$^2$ + \\ treespecies + lidaryear + meanheight:treespecies + \\ meanheight:lidaryear + meanheight:stddev + \\ stddev:lidaryear & final model &  39 & 0.48 & 137.49 \\ \\
-  meanheight + stddev + meanheight$^2$ + \\ meanheight:stddev & submodel 1 &   5 & 0.35 & 153.02 \\ \\
-  meanheight + stddev + meanheight$^2$ + \\ lidaryear + meanheight:lidaryear + \\ meanheight:stddev + stddev:lidaryear & submodel 2 &  29 & 0.44 & 142.82 \\ \\
-  meanheight + stddev + meanheight$^2$ + \\ treespecies + meanheight:treespecies + \\ meanheight:stddev & submodel 3 &  15 & 0.40 & 142.82 \\ 
+  meanheight + stddev + meanheight$^2$ + \\ treespecies + ALSyear + meanheight:treespecies + \\ meanheight:ALSyear + meanheight:stddev + stddev:ALSyear & final model &  39 & 0.48 & 140.62 & 46.69 \\ \\
+  meanheight + stddev + meanheight$^2$ + \\ meanheight:stddev & submodel 1 &   5 & 0.36 & 155.54 & 51.65 \\ \\
+  meanheight + stddev + meanheight$^2$ + \\ ALSyear + meanheight:ALSyear + \\ meanheight:stddev + stddev:ALSyear & submodel 2 &  29 & 0.45 & 145.62 & 48.35 \\ \\
+  meanheight + stddev + meanheight$^2$ + \\ treespecies + meanheight:treespecies + \\ meanheight:stddev & submodel 3 &  15 & 0.40 & 150.32 & 49.92 \\ 
    \hline
 \hline
 \end{tabular}
@@ -18,3 +19,21 @@ meanheight + stddev + meanheight$^2$ + \\ treespecies + lidaryear + meanheight:t
 %\endgroup
 
 
+%% old version
+%\begin{table*}
+%	\centering
+%	\caption{Accuracy metrics for submodels of final OLS regression model} 
+%	\label{tab:modacc_modterms}
+%	\begin{tabular}{llrrr}
+%		\hline
+%		model terms & model & parameters & $R^2_{adj}$ & \rmsecv{} \\ 
+%		\hline
+%		meanheight + stddev + meanheight$^2$ + \\ treespecies + lidaryear + meanheight:treespecies + \\ meanheight:lidaryear + meanheight:stddev + \\ stddev:lidaryear & final model &  39 & 0.49 & 132.12 \\ \\
+%		meanheight + stddev + meanheight$^2$ + \\ meanheight:stddev & submodel 1 &   5 & 0.35 & 148.03 \\ \\
+%		meanheight + stddev + meanheight$^2$ + \\ lidaryear + meanheight:lidaryear + \\ meanheight:stddev + stddev:lidaryear & submodel 2 &  29 & 0.44 & 137.52 \\ \\
+%		meanheight + stddev + meanheight$^2$ + \\ treespecies + meanheight:treespecies + \\ meanheight:stddev & submodel 3 &  15 & 0.41 & 137.52 \\ 
+%		\hline
+%		\hline
+%	\end{tabular}
+%\end{table*}
+%%\endgroup

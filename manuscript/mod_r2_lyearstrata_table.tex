@@ -1,23 +1,50 @@
+% latex table generated in R 3.4.2 by xtable 1.8-2 package
+% Sun Jan 07 17:26:28 2018
 \begin{table}[ht]
-\centering
-\caption{$R^2$, RMSE and Residual Square Sum (SSE) of final regression model within LiDAR acquisition year strata (\textit{lidaryear}). \textit{n}: number of validation data}
-\label{tab:adj_r2_within}
-\begin{tabular}{llrrr}
-  \hline
- LiDAR acquisition year & $R^2$ & rmse & SSE & n \\ 
-  \hline
-2012   & 0.55 & 139.54 & 7535278 & 387 \\ 
- 2011   & 0.55 & 145.21 & 17880553 & 848 \\ 
- 2010   & 0.48 & 122.16 & 16907662 & 1133 \\ 
-   2009   & 0.43 & 127.17 & 8652419 & 535 \\ 
- 2008\_1 & 0.34 & 170.49 & 11161424 & 384 \\ 
-   2008   & 0.50 & 124.39 & 10475374 & 677 \\ 
- 2007   & 0.49 & 129.72 & 6950192 & 413 \\ 
-  2003   & 0.32 & 146.37 & 11139814 & 520 \\ 
-   2002   & 0.43 & 139.79 & 6038601 & 309 \\ 
-   \hline
+	\centering
+	\caption{$R^2$, RMSE and RMSE\% of final regression model within ALS acquisition year strata (\textit{ALSyear}). $Area_{ALSyear}$: Area covered by ALS acquisition given in km$^2$. \textit{n}: number of validation data.}
+	\label{tab:adj_r2_within}
+	\begin{tabular}{lllrrr}
+		\hline
+		\textit{ALSyear} & $Area_{ALSyear}$ & $R^2$ & RMSE & RMSE\% & n \\ 
+		\hline
+ 2012 & 2807   & 0.61 & 135.84 & 44.87 & 408 \\ 
+ 2011 & 4361  & 0.57 & 146.21 & 48.29 & 883 \\ 
+ 2010 & 4182 & 0.51 & 120.90 & 39.93 & 1171 \\ 
+ 2009 & 2100 & 0.42 & 133.42 & 44.07 & 559 \\ 
+ 2008 & 2968 & 0.48 & 130.38 & 43.06 & 701 \\ 
+ 2008\_1 & 2116 & 0.33 & 175.43 & 57.94 & 394 \\ 
+ 2007 & 3498 & 0.46 & 136.47 & 45.08 & 418 \\ 
+ 2003 & 602 & 0.27 & 154.48 & 51.02 & 529 \\ 
+ 2002 & 775 & 0.44 & 141.55 & 46.75 & 314 \\ 
+		\hline
 \hline
 \end{tabular}
 \end{table}
 %\end{longtable}
 %\endgroup
+
+%% old version
+%\begin{table}[ht]
+%	\centering
+%	\caption{$R^2$, RMSE and Residual Square Sum (SSE) of final regression model within LiDAR acquisition year strata (\textit{lidaryear}). \textit{n}: number of validation data}
+%	\label{tab:adj_r2_within}
+%	\begin{tabular}{llrrr}
+%		\hline
+%		LiDAR acquisition year & $R^2$ & rmse & SSE & n \\ 
+%		\hline
+%		2012   & 0.55 & 139.54 & 7535278 & 387 \\ 
+%		2011   & 0.55 & 145.21 & 17880553 & 848 \\ 
+%		2010   & 0.48 & 122.16 & 16907662 & 1133 \\ 
+%		2009   & 0.43 & 127.17 & 8652419 & 535 \\ 
+%		2008\_1 & 0.34 & 170.49 & 11161424 & 384 \\ 
+%		2008   & 0.50 & 124.39 & 10475374 & 677 \\ 
+%		2007   & 0.49 & 129.72 & 6950192 & 413 \\ 
+%		2003   & 0.32 & 146.37 & 11139814 & 520 \\ 
+%		2002   & 0.43 & 139.79 & 6038601 & 309 \\ 
+%		\hline
+%		\hline
+%	\end{tabular}
+%\end{table}
+%%\end{longtable}
+%%\endgroup

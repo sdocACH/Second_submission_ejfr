@@ -52,7 +52,7 @@
 
 % uncomment to enable line-numbering:
 \usepackage{lineno}
-\linenumbers
+% \linenumbers
 
 %% ---------------------------------------------------------------------------------------------------- %%
 % please place your own definitions here:
@@ -63,10 +63,13 @@
 \newcommand{\rmsecv}{RMSE$_{cv}$}
 \newcommand{\mha}{m$^3$/ha}
 
-\definecolor{mygreen}{rgb}{0.0, 0.7, 0.2}
+\definecolor{mygreen}{rgb}{0.1, 0.6, 0.4}
 \newcommand{\added}[1]{\color{mygreen}{#1} \color{black}}
 \newcommand{\changed}[1]{\color{red}{#1} \color{black}}
+\renewcommand{\arraystretch}{1.3}
 
+%\newcommand{\added}[1]{\color{black}{#1} \color{black}}
+%\newcommand{\changed}[1]{\color{black}{#1} \color{black}}
 
 % Insert the name of "your journal" with
 \journalname{European Journal of Forest Research}
@@ -109,7 +112,9 @@
 \maketitle
 
 \begin{abstract}
-A timber-volume regression model applicable to the entire forest area of the federal German state of Rhineland-Palatinate is identified using a combination of airborne laser scanning (ALS)-derived metrics and information from a satellite-based tree species classification map available on the federal state level. As is common in many forest inventory datasets, strong heterogeneity in the LiDAR data due to different acquisition dates and misclassifications in the tree species classification map had noticeable effects on the regression model's performance. This article specifically addresses techniques that improve the performance of ordinary least square regression models under such restricting conditions. We introduce a calibration technique to neutralize the effect of misclassifications in the tree species variable that originally caused a residual inflation of 5\%. Incorporating the calibrated tree species information improved the model accuracy by 5\% in adjusted $R^2$ and suggests the use of such information in forthcoming inventories. We also found that including ALS quality information as categorical variables within the regression model considerably mitigates issues with time lags between the ALS and terrestrial data acquisition and ALS quality variations (9\% increase in adjusted $R^2$). The model achieved an adjusted $R^2$ of 0.48 (RMSE$_{cv}$ of 137 m$^3$/ha) under incorporation of the tree species and ALS quality information, and was thus improved by 13\% (16 m$^3$/ha) compared to the simple model only containing ALS height metrics (adjusted $R^2$=0.35, RMSE$_{cv}$=153 m$^3$/ha).
+A timber-volume regression model applicable to the entire forest area of the federal German state of Rhineland-Palatinate is identified using a combination of airborne laser scanning (ALS)-derived metrics and information from a satellite-based tree species classification map available on the federal state level. As is common in many forest inventory datasets, strong heterogeneity in the LiDAR data due to different acquisition dates and misclassifications in the tree species classification map had noticeable effects on the regression model's performance. This article specifically addresses techniques that improve the performance of ordinary least square regression models under such restricting conditions. We introduce a calibration technique to neutralize the effect of misclassifications in the tree species variable that originally caused a residual inflation of \changed{0.05} in R$^2$. Incorporating the calibrated tree species information improved the model accuracy by up to \changed{0.07} in adjusted $R^2$ and suggests the use of such information in forthcoming inventories. We also found that including ALS quality information as categorical variables within the regression model considerably mitigates issues with time lags between the ALS and terrestrial data acquisition and ALS quality variations (increase of \changed{0.09} in adjusted $R^2$). The model achieved an adjusted $R^2$ of 0.48 and a cross-validated root mean square error (RMSE$_{cv}$) of 46.7\% under incorporation of the tree species and ALS quality information, and was thus improved by \changed{0.12} in adjusted $R^2$ (5\% in RMSE$_{cv}$) compared to the simple model only containing ALS height metrics (adjusted $R^2$=0.36, RMSE$_{cv}$=51.7\%).
+
+% .. is substantially improved from 0.6 to 0.67)
 
 \keywords{OLS Regression \and standing timber volume \and ALS canopy height model \and  satellite-based tree species classification 
           \and calibration \and forest inventory \and angle count sampling}
@@ -144,7 +149,7 @@ A timber-volume regression model applicable to the entire forest area of the fed
 
 %% ------------------------------ Conclusion ---------------------------------------- %%
 
-\input{Conclusions}\newpage
+\input{Conclusions}
 
 
 %% ------------------------------ Acknowledgements ---------------------------------- %%
