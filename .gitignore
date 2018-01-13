@@ -15,12 +15,6 @@
 *.blg
 
 
-## latex style files:
-*.bst
-*.cls
-*.dtx
-
-
 ## Build tool auxiliary files:
 *.fdb_latexmk
 *.synctex
