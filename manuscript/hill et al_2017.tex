@@ -10,10 +10,15 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% Check before submission:
+% - metric of residual inflation (% or perc.points?) -> section 'Added Value of Tree Species Map Information', 'Effect of Misclassification'
+% - ceck sample sizes / also of missing tspec plots
+% - misclassification(S)?
+
 %% ------------------------------------------------------------------------------------------ %%
 
-%\documentclass[twocolumn]{svjour3}            % twocolumn
-\documentclass[twocolumn, draft]{svjour3}     % twocolumn
+\documentclass[twocolumn]{svjour3}            % twocolumn
+%\documentclass[twocolumn, draft]{svjour3}     % twocolumn
 %\documentclass[twocolumn, referee]{svjour3}   % twocolumn
 
 
@@ -64,13 +69,13 @@
 \newcommand{\mha}{m$^3$/ha}
 
 \definecolor{mygreen}{rgb}{0.1, 0.6, 0.4}
-\newcommand{\added}[1]{\color{mygreen}{#1} \color{black}}
-\newcommand{\changed}[1]{\color{red}{#1} \color{black}}
+%\newcommand{\added}[1]{\color{mygreen}{#1} \color{black}}
+%\newcommand{\changed}[1]{\color{red}{#1} \color{black}}
+
+\newcommand{\added}[1]{\color{black}{#1} \color{black}}
+\newcommand{\changed}[1]{\color{black}{#1} \color{black}}
+
 \renewcommand{\arraystretch}{1.3}
-
-%\newcommand{\added}[1]{\color{black}{#1} \color{black}}
-%\newcommand{\changed}[1]{\color{black}{#1} \color{black}}
-
 % Insert the name of "your journal" with
 \journalname{European Journal of Forest Research}
 
