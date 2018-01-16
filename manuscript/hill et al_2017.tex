@@ -10,15 +10,10 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% Check before submission:
-% - metric of residual inflation (% or perc.points?) -> section 'Added Value of Tree Species Map Information', 'Effect of Misclassification'
-% - ceck sample sizes / also of missing tspec plots
-% - misclassification(S)?
-
 %% ------------------------------------------------------------------------------------------ %%
 
-\documentclass[twocolumn]{svjour3}            % twocolumn
-%\documentclass[twocolumn, draft]{svjour3}     % twocolumn
+%\documentclass[twocolumn]{svjour3}            % twocolumn
+\documentclass[twocolumn, draft]{svjour3}     % twocolumn
 %\documentclass[twocolumn, referee]{svjour3}   % twocolumn
 
 
@@ -64,16 +59,16 @@
 
 % reocurring terms:
 \newcommand{\bwi}{BWI3}
-\newcommand{\adjrsq}{adjusted $R^2$}
+\newcommand{\adjrsq}{adjusted R$^2$}
 \newcommand{\rmsecv}{RMSE$_{cv}$}
 \newcommand{\mha}{m$^3$/ha}
 
 \definecolor{mygreen}{rgb}{0.1, 0.6, 0.4}
-%\newcommand{\added}[1]{\color{mygreen}{#1} \color{black}}
-%\newcommand{\changed}[1]{\color{red}{#1} \color{black}}
+\newcommand{\added}[1]{\color{mygreen}{#1} \color{black}}
+\newcommand{\changed}[1]{\color{red}{#1} \color{black}}
 
-\newcommand{\added}[1]{\color{black}{#1} \color{black}}
-\newcommand{\changed}[1]{\color{black}{#1} \color{black}}
+%\texttt{\newcommand{\added}[1]{\color{black}{#1} \color{black}}
+%\newcommand{\changed}[1]{\color{black}{#1} \color{black}}}
 
 \renewcommand{\arraystretch}{1.3}
 % Insert the name of "your journal" with
@@ -117,7 +112,7 @@
 \maketitle
 
 \begin{abstract}
-A timber-volume regression model applicable to the entire forest area of the federal German state of Rhineland-Palatinate is identified using a combination of airborne laser scanning (ALS)-derived metrics and information from a satellite-based tree species classification map available on the federal state level. As is common in many forest inventory datasets, strong heterogeneity in the LiDAR data due to different acquisition dates and misclassifications in the tree species classification map had noticeable effects on the regression model's performance. This article specifically addresses techniques that improve the performance of ordinary least square regression models under such restricting conditions. We introduce a calibration technique to neutralize the effect of misclassifications in the tree species variable that originally caused a residual inflation of \changed{0.05} in R$^2$. Incorporating the calibrated tree species information improved the model accuracy by up to \changed{0.07} in adjusted $R^2$ and suggests the use of such information in forthcoming inventories. We also found that including ALS quality information as categorical variables within the regression model considerably mitigates issues with time lags between the ALS and terrestrial data acquisition and ALS quality variations (increase of \changed{0.09} in adjusted $R^2$). The model achieved an adjusted $R^2$ of 0.48 and a cross-validated root mean square error (RMSE$_{cv}$) of 46.7\% under incorporation of the tree species and ALS quality information, and was thus improved by \changed{0.12} in adjusted $R^2$ (5\% in RMSE$_{cv}$) compared to the simple model only containing ALS height metrics (adjusted $R^2$=0.36, RMSE$_{cv}$=51.7\%).
+A timber-volume regression model applicable to the entire forest area of the federal German state of Rhineland-Palatinate is identified using a combination of airborne laser scanning (ALS)-derived metrics and information from a satellite-based tree species classification map available on the federal state level. As is common in many forest inventory datasets, strong heterogeneity in the LiDAR data due to different acquisition dates and misclassifications in the tree species classification map had noticeable effects on the regression model's performance. This article specifically addresses techniques that improve the performance of ordinary least square regression models under such restricting conditions. We introduce a calibration technique to neutralize the effect of misclassifications in the tree species variable that originally caused a residual inflation of \changed{0.05} in adjusted $R^2$. Incorporating the calibrated tree species information improved the model accuracy by up to \changed{0.07} in adjusted $R^2$ and suggests the use of such information in forthcoming inventories. We also found that including ALS quality information as categorical variables within the regression model considerably mitigates issues with time lags between the ALS and terrestrial data acquisition and ALS quality variations (increase of \changed{0.09} in adjusted $R^2$). The model achieved an adjusted $R^2$ of 0.48 and a cross-validated root mean square error (RMSE$_{cv}$) of 46.7\% under incorporation of the tree species and ALS quality information, and was thus improved by \changed{0.12} in adjusted $R^2$ (5\% in RMSE$_{cv}$) compared to the simple model only containing ALS height metrics (adjusted $R^2$=0.36, RMSE$_{cv}$=51.7\%).
 
 % .. is substantially improved from 0.6 to 0.67)
 
@@ -160,7 +155,7 @@ A timber-volume regression model applicable to the entire forest area of the fed
 %% ------------------------------ Acknowledgements ---------------------------------- %%
 
 \begin{acknowledgements}
-We want to express our gratitude to Prof. H. Heinimann (Chair of Land Use Engineering, ETH Zurich) for supporting this study. We want to explicitly thank Dr. Johannes Stoffels from the Environmental Sensing and Geoinformatics Group of Trier University for providing the tree species classification map as well as for constructive discussions when it came to interpreting the results. Special gratitude is owed to the State Forest Service of Rhineland-Palatinate, in particular Dr. Joachim Langshausen, Jürgen Dietz and Claus-Andreas Lessander, for collaboration and providing the forest inventory and geodata. We also want to thank Kai Husmann and Christoph Fischer from the Northwest German Forest Research Institution Göttingen for their advice in processing the terrestrial inventory data, and Alexander Massey and Michael Hill for proofreading. We also want to thank two anonymous reviewers for their valuable support to improve the initial manuscript.\\
+We want to express our gratitude to Prof. H. Heinimann (Chair of Land Use Engineering, ETH Zurich) for supporting this study. We want to explicitly thank Dr. Johannes Stoffels from the Environmental Sensing and Geoinformatics Group of Trier University for providing the tree species classification map as well as for constructive discussions when it came to interpreting the results. Special gratitude is owed to the State Forest Service of Rhineland-Palatinate, in particular Dr. Joachim Langshausen, Jürgen Dietz and Claus-Andreas Lessander, for collaboration and providing the forest inventory and geodata. We also want to thank Kai Husmann and Christoph Fischer from the Northwest German Forest Research Institution Göttingen for their advice in processing the terrestrial inventory data, and Alexander Massey and Michael Hill for proofreading. We also want to thank two anonymous reviewers for their valuable support to improve the manuscript.\\
 
 \noindent \textbf{Conflict of Interest} The authors declare that they have no conflict of interest.
 
