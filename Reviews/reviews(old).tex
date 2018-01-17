@@ -6,9 +6,10 @@
 
 %============================================ Define Titlepage & packages =============================================%
 
-\title{Review Round 1\\\vspace{1cm}}
+\title{Review}
 
-\author{}
+\author{Combining canopy height and tree species map information for large scale timber volume estimations under strong heterogeneity of auxiliary data and variable sample plot sizes\\
+Andreas Hill, Henning Buddenbaum, Daniel Mandallaz}
 
 \usepackage{fancyhdr}     
 \usepackage{amsmath} %Paket für erweiterte math. Formeln
@@ -22,13 +23,13 @@
 \usepackage{color}
 
 \usepackage{geometry}
- \geometry{
- a4paper,
- left=25mm,
- right=25mm,
- top=30mm,
- bottom=30mm
- }
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=30mm,
+	bottom=30mm
+}
 
 \setlength{\parindent}{0em} % Einzug bei neuen Absätzen
 
@@ -36,7 +37,6 @@
 % -------------------------------------- Main Document------------------------------------------ %
 
 \begin{document}
-
 
 %------------------------------------------------------------------------------------------------%
 % -------------------------------------- Tex Settings ------------------------------------------ %
@@ -54,9 +54,11 @@
 
 \definecolor{mybrown}{rgb}{0.6, 0.15, 0.1}
 \definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\definecolor{mygreen}{rgb}{0.1, 0.4, 0.4}
 \newcommand{\answer}[1]{\small \color{mybrown}{#1} \color{black}}
 \newcommand{\note}[1]{\textit{\small \color{amaranth} \textbf{Note:} #1} \color{black}}
 \newcommand{\todo}[1]{\color{red}{#1} \color{black}}
+\newcommand{\answerfin}[1]{\small \color{mygreen}{#1} \color{black}}
 
 
 %------------------------------------------------------------------------------------------------%
@@ -73,28 +75,23 @@ Comments:\\
   % 01) ++++++++++++++++++++++++++ %
   \item \textit{Even though the development of the working/linking model is important, I would have appreciated if it was also presented what the effect of using the model is for estimates. How big is the relative efficiency for estimates in RLP? Consider discussing the impacts of using an internal model (as here) vs. an external model.}
   
-  \answer{We are currently writing a follow-up article, where the 'final' regression model presented in this article is in fact used as an internal model for model-assisted small area estimations of standing timber volume within 390 forest management units in RLP. In this study, the focus is on the application of different estimators. While the demonstration of a small area double sampling procedure for the German NFI has actually been the underlying overall objective, we decided to publish the findings in two separated articles. Our motivation to address the model building in an own first article as a pre-study has been that the identification of the 'best possible' regression model turned out to be a major issue of the entire study, facing the data inconsistencies described in the article. In particular, we came to the conclusion that the three major issues (heterogeneity in the remote sensing data, identification of the optimal support under angle count sampling, incorporating tree species information including the handling of misclassification) have not yet been dealt with in this detail - at least for similar studies in terms of study size and diversity of forest structures and number of different tree species.}
-
-
+  \answerfin{We are currently writing a follow-up article in which the 'final' regression model presented in this article is in fact used as an internal model for model-assisted small area estimations of standing timber volume within 390 forest management units in RLP. In this framework, we also discuss the pro and cons of internal vs. external models. However, while the demonstration of a small area double sampling procedure for the German NFI has actually been the underlying overall objective, we decided to publish the findings in two separated articles. Our motivation to address the model building in a separate first article as a pre-study has been that the identification of the 'best possible' regression model turned out to be a major issue of the entire study. In particular, we came to the conclusion that the three major issues we had to deal with (i.e. heterogeneity in the remote sensing data, identification of the optimal support under angle count sampling, incorporating tree species information including the handling of misclassifications) have not yet been dealt and linked to each other in this detail.}
   % --------------------------- %
   
   
   % 02) ++++++++++++++++++++++++++ %
-  \todo{\item \textit{Please discuss the results with the study by Kirchhoefer, et al. (2017) {Considerations towards a Novel Approach for Integrating Angle-Count Sampling Data in Remote Sensing Based Forest Inventories, Forests}}}
+  \item \textit{Please discuss the results with the study by Kirchhoefer, et al. (2017) {Considerations towards a Novel Approach for Integrating Angle-Count Sampling Data in Remote Sensing Based Forest Inventories, Forests}}
   
-  \answer{ ... \\}
-  
-  \note{Very good. We shoud discuss ...}
-  
-  % --------------------------- %
+  \answerfin{Thank you very much for the hint to this study. We discussed the findings of the study at multiple occasions in the 'Discussion' (section 4), i.e. at the end of section 4.2 'Stratification according to ALS Years and Tree Species' (page 13, RHS), and in section 4.3 'Choice of Support under Angle Count Sampling' (page 14, RHS).}
+    % --------------------------- %
   
   
   % 03) ++++++++++++++++++++++++++ %
   \item \textit{Despite of the large number of observations, the number of 39 explanatory variables is quite large for a linear model. Could you discuss implications of this? Except for 2007, the model parameters do not seem to be all too different (Fig 7). Consider merging several years (all except for 2007?) into one factor as a simple means to reduce the number of model parameters.}
   
-  \answer{1) Concerning the number of parameters, we here considered the often cited rule of thumb by Draper and Smith (2014) \{Applied regression analysis\}, i.e. one should at least have 10 observations per parameter in the regression model in order to avoid the issue of overfitting. For our data set, that would have implied a sample size of at least 390 observations. Since the actual number of observations used for model fitting was 5206 and hence considerably beyond the threshold suggested by Draper and Smith, the number of 39 parameters was not regarded to be critical.}
+  \answerfin{1) Concerning the number of parameters, we here considered the often cited rule of thumb by Draper and Smith (2014) \{Applied regression analysis, Chapter 15.1\}, i.e. one should at least have 5-10 observations per parameter in the regression model in order to avoid the issue of overfitting. For our dataset, that would have implied a sample size of at least 390 observations. Since the actual number of observations used for model fitting was 5171 and hence considerably beyond the threshold suggested by Draper and Smith, the number of 39 parameters was not regarded to be critical. We added a comment on this in section 4.1 'Stratification according to ALS Years and Tree Species', page 13 (RHS), line 821-826.}
   
-  \answer{2) Concerning merging several years (all except for 2007?) into one factor: As described in section 2.3.1, we already merged the ALSyears 2006 and 2007, and 2012 and 2013. However, as emphasized in Fig.8 and Table 1, the effect of using the ALSyears factor-levels was to allow for higher model accuracies in ALSyears-strata in which the height data showed less noise compared to when merging all or most ALSyear factor-levels. This effect was significantly reduced or even removed when merging the ALSyears-levels except 2007, since this increased the noise in the data and lowered the overall R$^2$ values as well as the R$^2$-values within the original ALSyear strata. We show this in the table below, comparing the R$^2$-values of the final model (as given in the article) and those achieved when merging the factor-levels except '2007' (called the 'merged model'). As depicted in section 'Discussion' line 746-777, achieving those higher model accuracies within domains that are located in the respective ALSyear-strata are considered to improve the estimation errors in the frame of our upcoming Small Area Estimation analysis. We will particularly investigate this issue in the upcoming article. For the mentioned reasons, we thus decided not to merge any ALSyear factor-levels.
+  \answerfin{2) Concerning merging several years (all except for 2007) into one factor: As described in section 2.3.1, we already merged the ALSyears 2006 and 2007, and 2012 and 2013. However, as emphasized in Fig.8 and Table 2, the purpose of using the ALSyears factor-levels was to allow for higher model accuracies in ALSyear-strata in which the height data showed less noise or were in better temporal alignment with the terrestrial inventory than in other ALSyears. The so improved model accuracies were however substantially reduced or even removed when merging several ALSyears-levels, since this increased the noise in the data and lowered the overall R$^2$ values as well as the R$^2$-values within the original ALSyear strata. We show this in the table below, comparing the R$^2$-values of the final model (as given in the article) and those achieved when merging the factor-levels except '2007' (called the 'merged model'). The same was investigated when merging other levels. As depicted in section 'Discussion' page 13/14 line 862-869, achieving those higher model accuracies within domains that are located in the respective ALSyear-strata are considered to improve the estimation errors in the frame of our upcoming small area estimation analysis. We will particularly investigate this issue in the upcoming article. For the mentioned reasons, we thus decided not to merge any ALSyear factor-levels. We added a comment on this in section 4 'Discussion', page 13 (RHS) line 836-838.}
   	
   	\begin{table}[ht]
   		\centering
@@ -115,44 +112,26 @@ Comments:\\
   			\hline
   		\end{tabular}
   	\end{table}
-}
-
-\answer{ We added a few sentences in the section 4 'Discussion' where we address and comment on issues 1) and 2)}
-  % --------------------------- %
+ % --------------------------- %
   
   
   % 04) ++++++++++++++++++++++++++ %
   \item \textit{The use of square supports is at least uncommon. Basically all studies I am aware of use circular supports (in the case of circular sample plots as here). Therefore, this choice should be justified a bit more or be revised. The reason given that the support should allow for a potential tessellation does not seem to hold because the exact plot location will not allow for an alignment with a potential tessellation grid anyways. To my understanding, the area (size) of the support needs to fit to the field data and the tessellation grid, especially if scale-dependent explanatory variables are used. The shape of the support should resemble the field data. I think the model variance is artificially increased by selecting a support that does not fit (i.e. is not circular) with the field data.}
   
-  \answer{1) Thank you very much for the hint! We recalculated the entire analysis under the use of circular plots. It turned out that this only had minor effects on all accuracy metrics that were derived in our study. The results were almost identical to the previous ones and did not affect the major findings of the article. It however led to a further improvement of the model accuracy in the ALSyear-strata 2012, 2011 and 2010 (Table 1). We thus decided to switch to the use of circular supports with respect to your comments and changed all respective text-sections, Figures and Tables accordingly. From a purely hypothetical point of view, we think that the choice between rectangular and circular supports did only have minor impacts on the model accuracy, because a) the auxiliary information (ALS canopy height model and tree species classification map) have a rather low spatial resolution (5 x 5 meters); and b) (more importantly) because our analysis already showed that the best possible model fit was not realized using support sizes that most accurately corresponded to the plot individual extents defined by the angle count sampling technique, but turned out to depend more on the spatial resolution and the kind of information of the auxiliary data. We considered this to be an important result of the study which is why we emphasized it in the last paragraph of our discussion. We added a short comment that also the use of rectangular supports - which is in fact often used in applications of model-dependent estimators - did lead to almost exactly the same results.}
+  \answer{1) Thank you very much for the hint! We recalculated the entire analysis under the use of circular supports. It turned out that this only had minor effects on all accuracy metrics that were derived in our study. The results were almost identical to the previous ones and did not affect the major findings of the article. It however led to a further improvement of the model accuracy in the ALSyear-strata 2012, 2011 and 2010 (Table 2). We thus decided to switch to the use of circular supports with respect to your comments and changed all respective text-sections, numbers, Figures and Tables accordingly. From a purely hypothetical point of view, we think that the choice between rectangular and circular supports did only have minor impacts on the model accuracy, because a) the auxiliary information (ALS canopy height model and tree species classification map) have a rather low spatial resolution (5 x 5 meters); and b) (more importantly) because our analysis already showed that the best possible model fit was not realized using support sizes that most accurately corresponded to the plot individual extents defined by the angle count sampling technique, but turned out to depend more on the spatial resolution and the kind of information of the auxiliary data. We considered this to be an important result of the study which is why we emphasized it in the last paragraph of our discussion.}
   
-  \answer{2) \underline{Rational for rectangular supports:} After reconsideration, we became aware that the reason given in the article for using rectangular supports (i.e. theoretical tessellation of the forest area) was indeed not correct. In the \textit{infinite population approach} used by the model-assisted estimators by Mandallaz (and also those proposed by Saborowski), the estimators do in fact not impose any assumptions on the geometry and size of the supports. This is because the explanatory variables are sampled from an infinite population of points defining the continuous distribution (i.e. surface) of the explanatory variable. However, the theoretical tessellation is one prerequisite of model-dependent estimators in order to properly define the population of elements (often referred to as 'pixels' in which the explanatory variables are calculated) used for estimation and is thus not at all uncommon (see e.g. Breidenbach, .......). We rephrased the respective text in section 2.4.}
+  \answer{2) Rational for rectangular supports: After reconsideration, we became aware that the reason given in the article for using rectangular supports (i.e. theoretical tessellation of the forest area) was indeed not correct. In the \textit{infinite population approach} used by the model-assisted estimators by Mandallaz (and also those proposed by Saborowski), the estimators do in fact not impose any assumptions on the geometry and size of the supports. This is because the explanatory variables are sampled from an infinite population of points defining the continuous distribution (i.e. surface) of the explanatory variable. We rephrased the respective text in section 2.4.}
 
   % --------------------------- %
   
 
   % 05) ++++++++++++++++++++++++++ %
   \item \textit{Was it not necessary to remove outliers or other influential observations from the data set? It sounds almost too good to be true, if that was not necessary.}
-  
-   
-	\answer{We conducted an Influence Analysis, i.e. leverage / outlier detection, for the 'final model'. We here considered the usually applied criteria of \textit{Leverages} and \textit{Cook's Distance} as amongst others described in Fahrmeir 2013 \{Regression: models, methods and applications. \textit{Springer Science \& Business Media}. page 164-167\}. The critical threshold of $2p/n$ (i.e. twice the average of the hat matrix' diagonal entries), was exceeded by 10\% of the observations. However, only 3\% of these leverage points were assigned to studentized resiudals > 1 or < -1. Leaving these 3\% of points out and recalculating the final model lead to a $R^{2}_{adj}$ of 0.494 compared to 0.485 when including them in the regression. The Cook's Distance values $D_i$ did not exceed a value of 0.019, and thus were far apart from the often cited critical threshold of $D_i > 0.5$. Based on these findings and the considerations given below, we decided not to remove observations from the modelling data set. We added a paragraph commenting on this issue of influential data points in section 3.3 'Final Regression Model'.\\
 
-    Comments:
-    
-	  \begin{enumerate}
-	  	
-		\item We emphasize that the objective of the regression model was to predict the outcome of the BWI3 timber volume survey for each sample plot. This means that discrepancies between the response variable value and the corresponding explanatory variable can arise from the remote sensing data due to time-lags, heterogeneity etc., but also from the terrestrial inventory procedure due to non-visible sample trees that should have been recorded (see Ritter et. al \{Correcting the nondetection bias of angle count sampling, \textit{Canadian journal of forest research}\}) or the applied inventory thresholds that can exclude existing trees from the sample. Hence, a sound justification of removing an influential observation from the data set seems rather demanding. Even if observations turn out to have a leverage effect on the regression coefficients, this does not necessarily justify their removal from the data set. Increasing the model fit by deleting observations does also not ensure a better prediction accuracy for out of sample observations (i.e. unseen data).
-		
-		\item Especially if the regression model is used as an internal model in the frame of model-assisted, i.e. design-based estimators (which will be the case in our follow-up study), we generally consider removing potential outliers or leverage points an issue that has to be handled with extreme caution. This is because excluding an observation from the model fit automatically means to exclude this observation from the sampling frame. Since the basic assumption here is that the sample has been generated randomly, removing of observations should in the first instance be regarded as an interference with the random sampling process. For example, excluding all zero-plots from the model fit and thus from the sampling frame would maybe yield a better model accuracy, but lead to a severe overestimation of timber volume total for the inventory area. Furthermore, the implied reduction of the terrestrial sample size will lead to a considerable increase of the width of confidence intervals particularly for small area estimates within in small area domains where the amount of terrestrial samples is already severely limited.
-		
-	  \end{enumerate}
+	\answer{We conducted an Influence Analysis, i.e. leverage / outlier detection, for the 'final model'. We here considered the usually applied criteria of \textit{Leverages} and \textit{Cook's Distance} as amongst others described in Fahrmeir 2013 \{Regression: models, methods and applications. \textit{Springer Science \& Business Media}. page 164-167\}. The critical threshold of $2p/n$ (i.e. twice the average of the hat matrix' diagonal entries), was exceeded by 10\% of the observations. However, only 3\% of these leverage points were assigned to studentized resiudals > 1 or < -1. Leaving these 3\% of points out and recalculating the final model lead to a $R^{2}_{adj}$ of 0.494 compared to 0.485 when including them in the regression. The Cook's Distance values $D_i$ did not exceed a value of 0.019, and thus were far apart from the often cited critical threshold of $D_i > 0.5$. Based on these findings, we decided not to remove observations from the modelling data set. We added a paragraph commenting on this issue of influential data points in section 3.3 'Final Regression Model'.
 
-}	
-  
-%  \note{Add comments taken from the above given answers in the article. Maybe one could argue like this: \\'We also conducted an analysis for detecting influential data points or outliers for the final regression model. We here considered the usually applied criteria of \textit{leverages} and \textit{Cook's Distance} as amongst others described in Fahrmeir 2013'. The critical threshold of $2p/n$ (i.e. twice the average of the hat matrix' diagonal entries), was exceeded by 10\% of the observations. However, only 3\% of these leverage points were assigned to studentized residuals > 1 or < -1. Leaving these 3\% of points out and recalculating the final model lead to a $R^{2}_{adj}$ of 0.494 compared to 0.485 when including them in the regression. Cook's Distance values $D_i$ did not exceed a value of 0.019, and thus were far apart from the often cited critical threshold of $D_i > 0.5$ that indicate a considerably change of the regression model results when omitting them. We thus decided not to remove any further observations from the modelling dataset with respect to the following considerations: Especially if the regression model is used as an internal model in the frame of model-assisted, i.e. design-based estimators (which will be the case in our follow-up study), we generally consider removing potential outliers or leverage points an issue that has to be handled with extreme caution. This is because excluding an observation from the model fit automatically means to exclude this observation from the sampling frame. Since the basic assumption here is that the sample has been generated randomly, removing of observations should in the first instance be regarded as an interference with the random sampling process. For example, excluding all zero-plots from the model fit and thus from the sampling frame would maybe yield a better model accuracy, but lead to a severe overestimation of timber volume total for the inventory area. Furthermore, the implied reduction of the terrestrial sample size will lead to a considerable increase of the width of confidence intervals particularly for small area estimates within in small area domains where the amount of terrestrial samples is already severely limited.'}
-
+    Especially if the regression model is used as an internal model for design-based estimations (which will be the case in our follow-up study), we generally consider removing potential outliers or leverage points an issue that has to be handled with extreme caution. In the design-based framework, removing data points from the modelling/sampling frame is only valid if the respective observations turns out to be truly erroneous. If this is not the case, the removal of outliers or influential data points will increase the model fit, but to the cost of possible bias for the estimates. This is because excluding an observation from the model fit has in the first instance to be regarded as an interference with the random sampling process. We will comment on this issue in our upcoming study.}	
   % --------------------------- %
-  
   
   
   % 06) ++++++++++++++++++++++++++ %
@@ -191,28 +170,24 @@ Comments:\\
   % 09) ++++++++++++++++++++++++++ %
   \item \textit{Calibration. Did this study really "introduce a calibration technology"? Consider revising. Why is the tree-species model a "calibration model"? Calibration model sounds like the parameters of the original model were adjusted. Calibration is also an estimation technique and could be misunderstood in this context. Would it be a calibration model if a traditional tree species map was used as explanatory variables? Is it not simply a model with some categorical explanatory variables?}
   
-  \answer{We think there must be a misunderstanding here. Our proposed methods is indeed a true calibration as known from classical statistical calibration approaches in the sense that 'parameters of the original model were adjusted'. Classical statistical calibration models are used to calibrate an error-prone variable that can cheaply be measured in high quantity on its corresponding exact, i.e. error-free variable whose recording is however very cost intensive. We exactly used this statistical framework to calibrate the estimated main tree species from the classification map (which revealed the quantified misclassification errors shown in Fig.4a) left) on the error-free (i.e. exact) main tree species calculated from the set of sample trees in each terrestrial plot. This calibration of the tree species variable led to an increase in the classification accuracies and more importantly, considerably reduced the effect of the misclassification errors on the regression coefficients and thus increased the model accuracy when using the \textit{calibrated} main plot tree species as a categorical variable in the regression model. Concerning your question, the term 'calibration model' refers to the random forest algorithm that is used to calibrate the error-prone tree species variable on the exactly determined (terrestrially derived) main plot tree species. The regression model using this calibrated categorical variable is indeed 'simply a model with some categorical explanatory variables'. The proposed calibration method was also well received by the second reviewer and pronounced to be an 'important' part of our work. Initiated by your remarks, we rephrased the section to be more clear about the basic idea of classical calibration and differentiate it from the topic of calibration estimation by rephrasing Section 2.3.2 'Calibration' accordingly.}
-  
-  \note{Rephrase Section 2.3.2 'Calibration' to be more clear about the general method of calibration as I formulated it in the answer here.} 
+  \answer{Our proposed methods is indeed a true calibration as known from classical statistical calibration approaches in the sense that 'parameters of the original model were adjusted'. Classical statistical calibration models are used to calibrate an error-prone variable that can cheaply be measured in high quantity on its corresponding exact, i.e. error-free variable whose recording is however very cost intensive. We exactly used this statistical framework to calibrate the estimated main tree species from the classification map (which revealed the quantified misclassification errors shown in Fig.4a) left) on the error-free (i.e. exact) main tree species calculated from the set of sample trees in each terrestrial plot. This calibration of the tree species variable led to an increase in the classification accuracies and more importantly, considerably reduced the effect of the misclassification errors on the regression coefficients and thus increased the model accuracy when using the \textit{calibrated} main plot tree species as a categorical variable in the regression model. Concerning your question, the term 'calibration model' refers to the random forest algorithm that is used to calibrate the error-prone tree species variable on the exactly determined (terrestrially derived) main plot tree species. The regression model using this calibrated categorical variable is indeed 'simply a model with some categorical explanatory variables'. The proposed calibration method was also well received by the other reviewer and pronounced to be an 'important' part of our work. On suggestion of the other Reviewer to 'put the calibration more popular' in our article,  we rephrased and expanded Section 2.3.2 'Calibration'. We here particularly considered your input and tried to be much more clear about the basic idea of calibration in measurement error statistics, and differentiate it from the topic of calibration estimation.}
+ 
   % --------------------------- %
   
   
   % 10) ++++++++++++++++++++++++++ %
   \item \textit{The issue of using y-transformed models or not is of high importance. By discussing why g-weight variance is of important, this paper could contribute considerably to the discussion. In addition: How are negative predictions dealt with in practice? Set to 0?}
   
-  \answer{1) This is a very very interesting hint and idea for our currently written follow-up article that actually deals with the design-based small area estimations in RLP. In fact, the application of the g-weight variances is a fundamental part of the study and we would love to incorporate your hint in our study.}
+  \answer{1) This is a very interesting hint and idea for our currently written follow-up article that actually deals with the design-based small area estimations in RLP. In fact, the application of the g-weight variances is a fundamental part of the study and we would love to incorporate your hint in our study. We thus only added a small comment in this article and will discuss this issue in more detail in the follow-up article.}
   
-  \answer{2) The purpose of this study was the identification of a best possible regression model to be integrated in the model-assisted estimators in the follow-up study. The objective was however not to apply the model, which is why we have not given any advice how to deal with negative predictions. In Hill et al. (2014)\{Accuracy assessment of timber volume maps using forest inventory data and LiDAR canopy height models. \textit{Forests}\}, we actually proposed to set these values as 'not defined' when it comes to visualizing them in a map. We also emphasized that averaging over a set of multiple predictions in the frame of double sampling estimations will diminish the effect of negative predictions. We added a respective comment in the discussion.}
-  
-  \note{Add respective comments in the discussion on a) how often negative predictions occurred for the observed terrestrial data; b) give suggestions on how to treat negative predictions, cite Hill et al. 2014.}
-  
+  \answer{2) The purpose of this study was the identification of a best possible regression model to be integrated in the model-assisted estimators in the follow-up study. We added a respective comment in section 3.3 'Interpretation of Final Regression Model' that rarely occurring negative predictions will not have an influence on model-assisted estimates since multiple predictions are averaged over spatial domains.} 
   % --------------------------- %
   
   
   % 11) ++++++++++++++++++++++++++ %
   \item \textit{P1,L44 RHS: Is Beaudoin et al really the right reference here? The concept is anyways much older and Næsset, E. (1997) {Estimating Timber Volume of Forest Stands Using Airborne Laser Scanner Data. Remote Sensing of Environment} should be considered.}
   
-  \answer{We revised the given reference of Beaudoin and now refer to the article of Brosofske et al. 2014 \{A review of methods for mapping and prediction of inventory attributes for operational forest management. \textit{ Forest Science, Society of American Foresters}\} who give a very nice and extensive review of applied mapping techniques in forestry, including various references to applications in the Nordic countries (page 1, 'Introduction', Line 41).  We also added a sentence particularly emphasizing the long history of timber volume prediction models with reference to Naesset 1997 \{Estimating timber volume of forest stands using airborne laser scanner data. \textit{Remote Sensing of Environment}\} (page 1, 'Introduction', Line 48-50).}
+  \answer{We revised the given reference of Beaudoin and now refer to the article of Brosofske et al. 2014 \{A review of methods for mapping and prediction of inventory attributes for operational forest management. \textit{ Forest Science, Society of American Foresters}\} who give a very nice and extensive review of applied mapping techniques in forestry, including various references to applications in the Nordic countries (page 1, 'Introduction', Line xx).  We also added a sentence particularly emphasizing the long history of timber volume prediction models with reference to Naesset 1997 \{Estimating timber volume of forest stands using airborne laser scanner data. \textit{Remote Sensing of Environment}\} (page 1, 'Introduction', Line xx-xx).}
   % --------------------------- %
   
   
@@ -220,15 +195,13 @@ Comments:\\
   \item \textit{P2,L15: Does Van Aardt et al. fit into the list of references?}
   
   \answer{We removed Van Aardt from the list of the given references and added Bohlin et al. 2017 \{Mapping forest attributes using data from stereophotogrammetry of aerial images and field data from the national forest inventory. \textit{SILVA FENNICA}\} as an up-to-date reference for mapping approaches applied in Sweden using data from the national forest inventory.}
-  
-  \note{Is there an article about mapping (not only model building) for Norway, maybe from Naesset amongst others?}
   % --------------------------- %
   
   
   % 13) ++++++++++++++++++++++++++ %
   \item \textit{P2,L59: It may be of interest around that line that a variable describing deciduous proportion derived from leaf-off ALS data was used by Breidenbach et al. (2008) {Mixed-effects models for estimating stand volume by means of small footprint airborne laser scanner data. Photogrammetric Journal of Finland} to improve a model for timber volume.}
   
-  \answer{Thank you very much for drawing our attention to this article. We rephrased the respective section of page 1 'Introduction' Line 111-118 accordingly and now mention the study of Breidenbach et al. (2008). We also decided to include this article / reference in our discussion, as one of the main findings of the article was that the proposed mixed model approach can yield higher prediction accuracies than simply stratifying according to categorical variables in the frame of OLS regression. We thought that this point fits very well in our case, since we exactly did the latter using the ALS acquisition years as a stratification variable. The reason we sticked to OLS was that the small area estimations (in particular the g-weight variance formulas) of the follow-up study using our regression model are explicitly defined for OLS models. We added a respective comment in the discussion (page XX Line x-x).}
+  \answer{Thank you very much for drawing our attention to this article. We rephrased the respective section of page 1 'Introduction' Line xx-xx accordingly and now mention the study of Breidenbach et al. (2008). We also decided to include this article / reference in our discussion, as one of the main findings of the article was that the proposed mixed model approach can yield higher prediction accuracies than simply stratifying according to categorical variables in the frame of OLS regression. We thought that this point fits very well in our case, since we exactly did the latter using the ALS acquisition years as a stratification variable. The reason we sticked to OLS was that the small area estimations (in particular the g-weight variance formulas) of the follow-up study using our regression model are explicitly defined for OLS models. We added a respective comment in the discussion (page XX Line xx-xx).}
   
   \note{Add comment in discussion!}
   
@@ -242,7 +215,7 @@ Comments:\\
   % 14) ++++++++++++++++++++++++++ %
   \item \textit{P2,L5-8 RHS: 'One of the rare examples…' I cannot follow here. The way it is described, it is exactly the approach commonly used in the Nordic countries. There must be hundreds of studies one could cite. Probably a misunderstanding?}
   
-  \answer{That was indeed not well formulated. Our intention of this section was actually to identify the gap of knowledge that we tried to address by dealing with tree species information in our study. We particularly wanted to point out that - up to our knowledge - there has not been a study that investigated the integration of this amount of tree species categories (i.e. 5 categories: beech, oak, spruce, douglas fir, scots pine) as explanatory variables in a prediction model. We appreciate the various studies made in the Nordic countries and it was not our intention to avoid mentioning them. However, we unfortunately have difficulties to find a lot of studies that use similar approaches than described in our article, i.e. using estimated tree species information (categorical or continuous) as explanatory variables in prediction models which go beyond the distinction of 'coniferous / broadleaf' (maybe because this is a not well investigated issue as depicted in White et al. 2016 and Koch 2010). We rephrased the respective section page 2 'Introduction' Line 112-125 accordingly and decided not to mention Packalen et al. 2006 since their approach seemed in fact to differ too much from our approach. If the reviewer cannot agree with the statement, we would very much appreciate if he could give us some references to studies he knows about that are more similar to ours.}
+  \answer{That was indeed not well formulated. Our intention of this section was actually to identify the gap of knowledge that we tried to address by dealing with tree species information in our study. We particularly wanted to point out that - up to our knowledge - there has not been a study that investigated the integration of this amount of tree species categories (i.e. 5 categories: beech, oak, spruce, douglas fir, scots pine) as explanatory variables in a prediction model. However, we unfortunately had difficulties to find a lot of studies that use similar approaches than described in our article, i.e. using estimated tree species information (categorical or continuous) as explanatory variables in prediction models which go beyond the distinction of 'coniferous / broadleaf' (maybe because this is a not well investigated issue as depicted in White et al. 2016 and Koch 2010). We rephrased the respective section page 2 'Introduction' Line xx-xx accordingly and decided not to mention Packalen et al. 2006 since their approach seemed in fact to differ too much from our approach. If the reviewer cannot agree with the statement, we would very much appreciate if he could give us some references to studies he knows about that are more similar to ours.}
   
   % --------------------------- %
   
@@ -268,17 +241,16 @@ Comments:\\
   
   
   % 18) ++++++++++++++++++++++++++ %
-  \todo{\item \textit{P7,L7-32: The model interpretation is a bit lengthy and may be best described by a reference to Fig 7.}}
+  \item \textit{P7,L7-32: The model interpretation is a bit lengthy and may be best described by a reference to Fig 7.}
   
-  
-  \answer{}
+  \answer{We think the Reviewer is referring to P\underline{10},L7-32 (section 'Interpretation of Final Regression Model'). In fact, the model interpretation is descibed by a reference to Fig. 7 (first sentence). We do not share the Reviewers opinion that the model interpretation is to lengthy, considering that it is - up to our knowledge - the first study where such detailed tree species information (5 tree species) has been used in a prediction model. We therefore consider providing a detailed interpretation of the model an important part of the article. With respect to the reasons explained we believe that revising the section is not justified.}
   % --------------------------- %
   
   
   % 19) ++++++++++++++++++++++++++ %
-  \todo{\item \textit{Please add a table on field measured values and relative RMSE values (\%).}}
+  \item \textit{Please add a table on field measured values and relative RMSE values (\%).}
   
-  \answer{}
+  \answer{We added a table on the field measured values within the state and communal forest area at the end of section 2.2 'Terrestrial Inventory Data'. RMSE-values in \% have also been calculated for the model accuracies and added in the article. (However, there are no RMSE-values for the field measured values. They are assumed to be error-free.)}
   % --------------------------- %
   
   
@@ -306,7 +278,7 @@ Comments:\\
   % 23) ++++++++++++++++++++++++++ %
   \item \textit{Figure 6: Could you expand in the text why two distinct clusters are visible? This remained a bit unclear. The dashed lines are hardly visible.}
   
-     \answer{The differentiation into two distinct point clouds results from the poor model performance under support size $q100$ for the CHM variables (i.e. the $lower$ point cloud). We added this information in Section 3.2 'Effect of Missclassifications'.}
+     \answer{The differentiation into two distinct point clouds results from the poor model performance under support size $q100$ for the CHM variables (i.e. the $lower$ point cloud). We added this information in Section 3.2 'Effect of Missclassifications'. We also changed the background to white in order to make the dashed lines better visible.}
   % --------------------------- %
   
   
@@ -327,14 +299,7 @@ Comments:\\
   % 26) ++++++++++++++++++++++++++ %
   \item \textit{Consider revising the use of percent (\%) vs. percentage points. My impression is that the terminology could have been used in the wrong way. (And R2 values are proportions, not percentages.)}
   
-     \answer{We also would prefer to use the \%-signs. The R$^2$ of a model is defined as the \textit{proportion of the response variable variance that can be explained by the predictions}:
-     	
-	 \begin{equation}
-	  R^2[\%]= \frac{\sum_{i=1}^{n}(\hat{y}_i - \bar{y})^2}{\sum_{i=1}^{n}(y_i - \bar{y})^2}*100
-     \end{equation}
-	
-	 As obvious, the R$^2$ has the unit [\%] if multiplied by 100. The R$^2$-values can then nicely be read as 'the model (predictions) can explain xx\% of the original data variation'.
-	}
+     \answer{ We revised this notation and changed the R$^2$-values into percentage points (i.e. 0.5 instead of 50\%).}
 
   % --------------------------- %
   
@@ -347,9 +312,9 @@ Comments:\\
   
   
   % 28) ++++++++++++++++++++++++++ %
-  \todo{\item \textit{Please add page range when citing books.}}
+  \item \textit{Please add page range when citing books.}
   
-  \answer{}
+  \answer{We used the article of Breidenbach and Astrup 2012 \{Small area estimation of forest attributes in the Norwegian National Forest Inventory\}, \textit{European Journal of Forest Research}) as example and added the book-chapters to the book-references of Mandallaz 2008, Gustafson 2003, Caroll et al. 2006 as well as the page range of Draper and Smith 2014 in our article accordingly.}
   % --------------------------- %
   
  % 29) ++++++++++++++++++++++++++ %
@@ -368,9 +333,9 @@ Comments:\\
   
   
  % 31) ++++++++++++++++++++++++++ %
-  \todo{\item \textit{P8L17-21, RHS: Discussion?}}
+  \item \textit{P8L17-21, RHS: Discussion?}
   
-    \answer{}
+    \answer{We moved this sentence to the Discussion, section 4.2 'Calibration of Tree Sprecies Map Information'.}
  % --------------------------- %
   
  % 32) ++++++++++++++++++++++++++ %
@@ -438,9 +403,9 @@ Comments:\\
 
 
  % 8) ++++++++++++++++++++++++++ %	
-	\todo{\item \textit{P5 Line 11-36 Column 2: Why did you use these variables and not others? I would recommend putting the explanation of your calibration method more popular in your article. It is an important part of your work.}}
+	\item \textit{P5 Line 11-36 Column 2: Why did you use these variables and not others? I would recommend putting the explanation of your calibration method more popular in your article. It is an important part of your work.}
 
-    \answer{}
+    \answer{An advantage for using those explanatory variables in the calibration model was that they also provided explanatory power in the regression model, so they could be used for both, the calibration \textit{and} the regression model. Using these variables thus considerably saved computation time as well as data storage space. We added this comment in Section 'Calibration'. Triggered by your suggestion above, we rewrote the entire Section 'Calibration' in order to be more clear about the technique of calibration in measurement error statistics, and to explain the idea of transferring this method to our misclassification problem in more detail.}
  % --------------------------- %	
 	
  % 9) ++++++++++++++++++++++++++ %
@@ -542,7 +507,7 @@ Comments:\\
 
 \item At the suggestion of Reviewer\#2, we removed the grey background in all graphic-plots.
 
-\item Additional to $RMSE_{cv}$ or $RMSE$, we now also calculated $RMSE_{cv}[\%]$ and $RMSE[\%]$. These values have respectively been added in the supplementary data tables (Table 2 and 3) as well as given in Table 1 in the article instead of SSE (requested by Reviewer\#2). We also decided to map the $RMSE_{cv}[\%]$ instead of $RMSE_{cv}$ in Fig. 5 (right)
+\item Additional to $RMSE_{cv}$ or $RMSE$, we now also calculated $RMSE_{cv}[\%]$ and $RMSE[\%]$. These values have respectively been added in the supplementary data tables (Table 2 and 3) as well as given in Table 1 in the article instead of SSE (requested by Reviewer\#2). We also decided to map the $RMSE_{cv}[\%]$ instead of $RMSE_{cv}$ in Fig. 5 (right). We also added the RMSE-formulas in section 2.5 'Model Building and Evaluation'.
 
 \item In Table 1, we added the area covered by each ALS acquisition to emphasize for which total area the respective model accuracies have been achieved. (This is particularly relevant when thinking about applying this model in model-dependent or model-assisted small area estimators for domains within these areas).
 
