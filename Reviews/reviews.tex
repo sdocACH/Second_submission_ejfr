@@ -519,39 +519,110 @@ Comments:\\
 % ----Documentation of changes made to the text ------------------------------------------------ %
 \section*{Documentation of changes:}
 
+\textit{Note:} 
+In order to facilitate the identification of changes to the previous manuscript, we provided a version of the revised manuscript to the editor and the reviewers in which \textit{changes} to the previous text have been colored in \textit{red}, and \textit{added} text sections have been colored in \textit{green}.\\
+
+The following changes affect the entire article:
 
 \begin{enumerate}
-
-
-\item Triggered by the suggestion of Reviewer\#1, we recalculated the entire analysis based on \textit{circular} rather than \textit{rectangular} supports. The results were almost identical to the previous ones and did not affect the major findings of the article. It however led to a further improvement of model accuracy in the ALSyear-strata 2012, 2011 and 2010 (Table 1). We \todo{changed the respective text-sections} as well as Fig.3(b) accordingly. In addition, the best model we found overall in terms of adjusted R$^2$ and cross-validated RMSE values (now also given in \%) was now the model later used as the final model ($q50$ support for both CHM and $treespecies$-variables). In the previous version, the best model was found with the support settings $q50$ for the CHM-variables and the $q100$ for the $treespecies$-variable.
-
-\item At the suggestion of Reviewer\#1, we changed the terminology of LiDAR into ALS.
-
-\item 10-fold cross-validation changed to 5-fold cv (did not change the results and led to much smaller calculation times).
-
-\item At the suggestion of Reviewer\#2, we removed the grey background in all graphic-plots.
-
-\item Additional to $RMSE_{cv}$ or $RMSE$, we now also calculated $RMSE_{cv}[\%]$ and $RMSE[\%]$. These values have respectively been added in the supplementary data tables (Table 2 and 3) as well as given in Table 1 in the article instead of SSE (requested by Reviewer\#2). We also decided to map the $RMSE_{cv}[\%]$ instead of $RMSE_{cv}$ in Fig. 5 (right). We also added the RMSE-formulas in section 2.5 'Model Building and Evaluation'.
-
-\item In Table 1, we added the area covered by each ALS acquisition to emphasize for which total area the respective model accuracies have been achieved. (This is particularly relevant when thinking about applying this model in model-dependent or model-assisted small area estimators for domains within these areas).
-
-
-\item We changed the layout of Fig.4 and Fig.5 based on the suggestions of Reviewer\#2. These changes comprised: a) using flexible scales among the tree species groups in order to "zoom" in and make the displayed information better to distinguish. We placed the legend on the bottom like suggested by Reviewer\#2. We also adapted the colour-scheme to support the visual distinction.
-
-
-
-
-
-
-
-
-
-
-
-
+	
+	\item Triggered by the suggestion of Reviewer\#1, we recalculated the entire analysis based on \textit{circular} rather than \textit{rectangular} supports. The results were almost identical to the previous ones and did not affect the major findings of the article. It however led to a further improvement of model accuracy in the ALSyear-strata 2012, 2011 and 2010 (Table 1). We changed the respective text-sections, tables and figures accordingly.
+	
+    \item At the suggestion of Reviewer\#1, we changed the terminology of LiDAR into ALS.
+    
+    \item At the suggestion of Reviewer\#2, we removed the grey background in all Figures. We also changed the layout of Fig.4 and Fig.5 based on the suggestions of Reviewer\#2. These changes comprised: a) using flexible scales among the tree species groups in order to "zoom" in and make the displayed information better to distinguish. We placed the legend on the bottom like suggested by Reviewer\#2. We also adapted the color-scheme to support the visual distinction
+    
+    \item Additional to $RMSE_{cv}$ or $RMSE$, we now also calculated $RMSE_{cv}[\%]$ and $RMSE[\%]$. These values have respectively been added in the supplementary data tables (Table 2 and 3) as well as given in Table 1 in the article instead of SSE (requested by Reviewer\#2). We also decided to map the $RMSE_{cv}[\%]$ instead of $RMSE_{cv}$ in Fig. 5 (right). We also added the RMSE-formulas in section 2.5 'Model Building and Evaluation'.
 
 \end{enumerate}
 
+
+
+The following text-sections have been subject to changes and/or adjustments:
+
+\begin{enumerate}
+	
+	\item Page 1, RHS, line 42: We added the Chapter to reference 'Mandallaz 2008', as as suggested by Reviewer\#1.
+	
+	\item Page 1, RHS, line 42: We substituted the reference of Brosofske et al. 2014 for Beaudoin et al. 2014 as suggested by Reviewer\#1.
+	
+	\item Page 1, RHS, line 49-51: We added a reference to Naesset 1997 as suggested by Reviewer\#1.
+	
+	\item Page 2, RHS, line 112-126: We added a reference to Breidenbach et al. 2008 and removed the reference to Packalen and Maltamo 2006, as suggested by Reviewer\#1.
+		
+	\item Page 3, LHS, line 184-186: We added a sentence on the 3 forest ownership classes in Rhineland-Palatinate.
+	
+	\item Page 3/4, RHS/LHS, line 230-246: Based on questions of Reviewer\#2, we added a few sentences on a) the measurements of tree heights in the German NFI, and b) accuracy information on the DGPS-determined field plot coordinates.
+	
+	\item Page 4, LHS, line 254-265: Based on questions of both Reviewers, we develop the rational for restricting the dataset to state-and communal forest in more detail.
+	
+	\item Page 4, LHS, Table 1: We added a table on the field measured values as suggested by Reviewer\#1.
+	
+	\item Page 4, RHS, line 282-309: Based on recommendations of both Reviewers, we rephrased the calculation of the CHM. The units are now also given only in points per m$^2$. 
+	
+	\item Page 4, RHS, line 315-322: Based on questions of both Reviewers, we explain the support-adjustment at forest borders in more detail.
+	
+	\item Page 5, Fig.2, caption: We added a remark that the transparent blue layer is the polygon mask defining the state-and communal forest area.
+	
+	\item Page 5, RHS, line 366: As a consequence of using circular supports, the missing tree species information changed to 411 sample plots.
+	
+	\item Page 5, RHS, 385-389: Suggested by both Reviewers, we defined the tested thresholds.
+	
+	\item Page 5 line 391 - Page 6 line 465: We completely rephrased the section about the Calibration of the treespecies variable, based on suggestion of Reviewer\#2 and questions of Reviewer\#1.
+	
+	\item Page 7, LHS, line 522: We changed the title of the section according to the recommendation of Reviewer\#2.
+	
+	\item Page 7, LHS, line 523-529: We rephrased the sentence as suggested by Reviewe\#2.
+	
+	\item Page 7, RHS, Figure 3 b): Now showing the \textit{circular} supports.
+	
+	\item Page 7, RHS, line 558: due to the use of circular supports,  the sample size of the modelling dataset changed to 5171 as the number of missing treespecies plots changed to 411. 
+	
+	\item Page 7, RHS, bottom: We added the formulas of RMSE.
+	
+	\item Page 8, LHS, top: We changed the error term of the OLS regression model from $e$ to $\varepsilon$ in order to stick to a more common notation.
+	
+	\item Page 8, LHS, line 563-565: Suggested by Reviewer\#1, we rephrased the sentence to avoid ambiguities.
+	
+	\item Page 8, Fig.4: We updated the figure to the circular-support evaluation and adapted the layout as suggested by Reviewer\#2.
+	
+	\item Page 9, LHS, line 623-627: Now, the best model we found overall in terms of adjusted R$^2$ and cross-validated RMSE values (now also given in \%) was the model later used as the final model ($q50$ support for both CHM and $treespecies$-variables). In the previous version, the best model was found with the support settings $q50$ for the CHM-variables and the $q100$ for the $treespecies$-variable
+	
+	\item Page 9, LHS, line 633-644: We rephrased this section as recommended by Reviewer\#2.
+	
+	\item Page 9, RHS, line 658-660: We moved the explanation why two distinct point clouds are visible in Fig.6 (page 10) to this section, as suggested by Reviewer\#1.
+	
+	\item Page 9, line 662-663: residual inflation of the R$^2$ is now given in percentage points rather than in \%.
+	
+	\item Page 9/11, RHS/LHS line 686-699: Based on questions of Reviewer\#1, we provide details of an leverage/outlier analyis of the final regression model and provide the reasons why no plots except the 'zero-plots' were removed from the modeling dataset. 
+	
+	\item Page 10, Fig 5 and Fig 6: The layout was changed according to recommendations of both Reviewers. 
+	
+	\item Page 11, LHS, line 732-743: Based on comments of Reviewer\#1, we extended the reason why no log-transformation of the response variable was applied.
+	
+	\item Page 11, RHS, line 751-757: Comments on each submodel given in Table 3 (page 12) were added based on comments of Reviewer\#2.
+	
+	\item Page 11, RHS, Table 2: We added the area of each ALS acquisition for which the derived model accuracies are valid. We also added the RMSE\% as suggested by Reviewer\#2.
+	
+	\item Page 11, RHS, line 771-778: Updated based on recalculations (circular supports).
+	
+	\item Page 12, Fig 7:  Updated based on recalculations (circular supports). Layout changed based on recommendations of Reviewer\#2.
+	
+	\item Page 12, Table 3: We substituted RMSE\% for SSE, as recommended by Reviewer\#2.
+	
+	\item Page 13, Fig 8: We changed the Layout according to suggestions of both Reviewers.
+	
+	\item Page 13 \& 14, LHS/RHS, line 797-815, 831-833, 836-849, 873-882: As requested by Reviewer\#1, we compare and discuss our findings with 4 similar studies carried out in central Europe, i.e. Latifi et al. 2012, Breidenbach et al. 2008, Maak et al. 2016, and Kirchhoefer et al. 2017.
+	
+	\item Page 13, RHS, line 821-826: Based on questions of Reviewer\#1, we comment on potential overfitting issues.
+	
+	\item Page 14, LHS, line 883-891: As recommended by Reviewer\#1, we moved this sentence from the 'Results'-section to the 'Discussion'.
+	
+	\item Page 14, LHS, line 925-968: We rephrased this section based on suggestions of Reviewer\#1 (we now also discuss our findings with the study of Kirchhoefer et al.).
+	
+	\item Page 15, Conclusion: We completely rephrased the section 'Conclusion' based on the recommendation of Reviewer\#1. Basically, we tried to avoid the conclusion to be an extension of the Discussion.
+
+\end{enumerate}
 
 
 %------------------------------------------------------------------------------------------------%
