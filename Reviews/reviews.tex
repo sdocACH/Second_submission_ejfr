@@ -89,9 +89,9 @@ Comments:\\
   % 03) ++++++++++++++++++++++++++ %
   \item \textit{Despite of the large number of observations, the number of 39 explanatory variables is quite large for a linear model. Could you discuss implications of this? Except for 2007, the model parameters do not seem to be all too different (Fig 7). Consider merging several years (all except for 2007?) into one factor as a simple means to reduce the number of model parameters.}
   
-  \answerfin{1) Concerning the number of parameters, we here considered the often cited rule of thumb by Draper and Smith (2014) \{Applied regression analysis, Chapter 15.1\}, i.e. one should at least have 5-10 observations per parameter in the regression model in order to avoid the issue of overfitting. For our dataset, that would have implied a sample size of at least 390 observations. Since the actual number of observations used for model fitting was 5171 and hence considerably beyond the threshold suggested by Draper and Smith, the number of 39 parameters was not regarded to be critical. We added a comment on this in section 4.1 'Stratification according to ALS Years and Tree Species', page 13 (RHS), line 821-826.}
+  \answerfin{1) Concerning the number of parameters, we here considered the often cited rule of thumb by Draper and Smith (2014) \{Applied regression analysis, Chapter 15.1\}, i.e. one should at least have 5-10 observations per parameter in the regression model in order to avoid the issue of overfitting. For our final model (39 parameters), that would have implied a sample size of at least 390 observations. Since the actual number of observations used for model fitting was 5171 and hence considerably beyond the threshold suggested by Draper and Smith, the number of 39 parameters was not regarded to be critical. We added a comment on this in section 4.1 'Stratification according to ALS Years and Tree Species', page 13 (RHS), line 825-830.}
   
-  \answerfin{2) Concerning merging several years (all except for 2007) into one factor: As described in section 2.3.1, we already merged the ALSyears 2006 and 2007, and 2012 and 2013. However, as emphasized in Fig.8 and Table 2, the purpose of using the ALSyears factor-levels was to allow for higher model accuracies in ALSyear-strata in which the height data showed less noise or were in better temporal alignment with the terrestrial inventory than in other ALSyears. The so improved model accuracies were however substantially reduced or even removed when merging several ALSyears-levels, since this increased the noise in the data and lowered the overall R$^2$ values as well as the R$^2$-values within the original ALSyear strata. We show this in the table below, comparing the R$^2$-values of the final model (as given in the article) and those achieved when merging the factor-levels except '2007' (called the 'merged model'). The same was investigated when merging other levels. As depicted in section 'Discussion' page 13/14 line 862-869, achieving those higher model accuracies within domains that are located in the respective ALSyear-strata are considered to improve the estimation errors in the frame of our upcoming small area estimation analysis. We will particularly investigate this issue in the upcoming article. For the mentioned reasons, we thus decided not to merge any ALSyear factor-levels. We added a comment on this in section 4 'Discussion', page 13 (RHS) line 836-838.}
+  \answerfin{2) Concerning merging several years (all except for 2007) into one factor: As described in section 2.3.1, we already merged the ALSyears 2006 and 2007, and 2012 and 2013. However, as emphasized in Fig.8 and Table 2, the purpose of using the ALSyears factor-levels was to allow for higher model accuracies in ALSyear-strata in which the height data showed less noise or were in better temporal alignment with the terrestrial inventory than in other ALSyears. The so improved model accuracies were however substantially reduced or even removed when merging several ALSyears-levels, since this increased the noise in the data and lowered the overall R$^2$ values as well as the R$^2$-values within the original ALSyear strata. We show this in the table below, comparing the R$^2$-values of the final model (as given in the article) and those achieved when merging the factor-levels except '2007' (called the 'merged model'). The same was investigated when merging other levels. As depicted in section 'Discussion' page 13/14 line 862-869, achieving those higher model accuracies within domains that are located in the respective ALSyear-strata are considered to improve the estimation errors in the frame of our upcoming small area estimation analysis. We will particularly investigate this issue in the upcoming article. For the mentioned reasons, we thus decided not to merge any ALSyear factor-levels. We added a comment on this in section 4 'Discussion', page 13 (RHS) line 840-853.}
   	
   	\begin{table}[ht]
   		\centering
@@ -127,7 +127,7 @@ Comments:\\
   % 05) ++++++++++++++++++++++++++ %
   \item \textit{Was it not necessary to remove outliers or other influential observations from the data set? It sounds almost too good to be true, if that was not necessary.}
 
-	\answerfin{We conducted an Influence Analysis, i.e. leverage / outlier detection, for the 'final model'. We here considered the usually applied criteria of \textit{Leverages} and \textit{Cook's Distance} as amongst others described in Fahrmeir 2013 \{Regression: models, methods and applications. \textit{Springer Science \& Business Media}. page 164-167\}. The critical threshold of $2p/n$ (i.e. twice the average of the hat matrix' diagonal entries), was exceeded by 10\% of the observations. However, only 3\% of these leverage points were assigned to studentized residuals > 1 or < -1. Leaving these 3\% of points out and recalculating the final model lead to a $R^{2}_{adj}$ of 0.494 compared to 0.485 when including them in the regression. The Cook's Distance values $D_i$ did not exceed a value of 0.019, and thus were far apart from the often cited critical threshold of $D_i > 0.5$. Based on these findings, we decided not to remove observations from the modelling data set. We added a paragraph commenting on this issue of influential data points in section 3.3 'Final Regression Model', page 9 RHS line 686-698.
+	\answerfin{We conducted an Influence Analysis, i.e. leverage / outlier detection, for the 'final model'. We here considered the usually applied criteria of \textit{Leverages} and \textit{Cook's Distance} as amongst others described in Fahrmeir 2013 \{Regression: models, methods and applications. \textit{Springer Science \& Business Media}. page 164-167\}. The critical threshold of $2p/n$ (i.e. twice the average of the hat matrix' diagonal entries), was exceeded by 10\% of the observations. However, only 3\% of these leverage points were assigned to studentized residuals > 1 or < -1. Leaving these 3\% of points out and recalculating the final model lead to a $R^{2}_{adj}$ of 0.494 compared to 0.485 when including them in the regression. The Cook's Distance values $D_i$ did not exceed a value of 0.019, and thus were far apart from the often cited critical threshold of $D_i > 0.5$. Based on these findings, we decided not to remove observations from the modelling data set. We added a paragraph commenting on this issue of influential data points in section 3.3 'Final Regression Model', page 9 RHS line 690-707.
 
     Especially if the regression model is used as an internal model for design-based estimations (which will be the case in our follow-up study), we generally consider removing potential outliers or leverage points an issue that has to be handled with extreme caution. In the design-based framework, removing data points from the modelling/sampling frame is only valid if the respective observations turns out to be truly erroneous. If this is not the case, the removal of outliers or influential data points might increase the model fit, but to the cost of possible bias for the estimates (bias-variance trade-off). This is because excluding an observation from the model fit has in the first instance to be regarded as an interference with the random sampling process. We will comment on this issue in our upcoming study.}	
   % --------------------------- %
@@ -150,16 +150,16 @@ Comments:\\
   % 07) ++++++++++++++++++++++++++ %
   \item \textit{Why and how were the ALS raw data thinned before interpolating them to grids? (Consider giving point densities in the more common unit point per m2.)}
   
-   \answerfin{The data was delivered as two separate datasets comprising the Vegetation First Pulse (VEF) and Ground (GRD) points. In order to create a surface model (DSM) in a given raster resolution, the highest point of the combined VEF and GRD dataset was identified in each raster cell and saved as a thinned surface point cloud. For the elevation model (DEM), the mean of all GRD points in the cell was calculated, and the result was saved as a thinned ground point cloud. The thinned point clouds were then aggregated to larger tiles and interpolated to raster images using a Delauney interpolation in the Matlab software. The resulting DSM and DEM raster sets were then subtracted from each other to calculate a canopy height model (CHM) in raster format, providing discrete information about the canopy surface height of the entire forest area of RLP in a spatial resolution of 5 meters. The thinning process led to much smaller datasets that could be processed in larger tiles and considerably lowered processing times than the original dense point clouds. Since the data was recorded in leaf-off condition, the original point clouds contained many returns from within the crowns of deciduous trees. The thinned dataset here also provided the advantage that those measurements did not skew the vegetation height estimate in the final CHM. We rephrased this paragraph in Section 2.3.1 'ALS Canopy Height Model' page 4 RHS accordingly to be more clear about this issue. We also changed the units to point per m$^2$.}
+   \answerfin{The data was delivered as two separate datasets comprising the Vegetation First Pulse (VEF) and Ground (GRD) points. In order to create a surface model (DSM) in a given raster resolution, the highest point of the combined VEF and GRD dataset was identified in each raster cell and saved as a thinned surface point cloud. For the elevation model (DEM), the mean of all GRD points in the cell was calculated, and the result was saved as a thinned ground point cloud. The thinned point clouds were then aggregated to larger tiles and interpolated to raster images using a Delauney interpolation in the Matlab software. The resulting DSM and DEM raster sets were then subtracted from each other to calculate a canopy height model (CHM) in raster format, providing discrete information about the canopy surface height of the entire forest area of RLP in a spatial resolution of 5 meters. The thinning process led to much smaller datasets that could be processed in larger tiles and considerably lowered processing times than the original dense point clouds. Since the data was recorded in leaf-off condition, the original point clouds contained many returns from within the crowns of deciduous trees. The thinned dataset here also provided the advantage that those measurements did not skew the vegetation height estimate in the final CHM. We rephrased the paragraph in Section 2.3.1 'ALS Canopy Height Model' page 4 RHS accordingly to be more clear about this issue. We also changed the units to point per m$^2$.}
   % --------------------------- %
   
 
   % 08) --------------------------- %
   \item \textit{Edge correction. Figure 3b suggests that supports were clipped at forest boundaries. 1) There is an additional data set for forest extent of public forests. Could it be described a bit more? Is the model, strictly speaking, only valid for public forests? How were plots on private forests treated? 2) Does clipping of supports fit to the type of edge correction in angle count sampling used in BWI3?}
   
-  \answerfin{1) \underline{Restriction to state and communal forest area:} We indicated the reason for this in the Introduction (page 2 RHS, last paragraph): 'Our study is embedded in the current implementation of model-assisted regression estimators (Mandallaz, 2013a,b; Mandallaz et al, 2013) for estimating the standing timber volume within the state and communal forest management units over the entire state of Rhineland-Palatinate'. Actually, we use the 'final' regression model presented in this article as an internal model for model-assisted small area estimations of standing timber volume within 390 the state and communal forest management units in RLP (to be presented in our upcoming follow-up article). The state and communal forest area thus constitutes the sampling frame on which the regression model identified in this article is subsequently applied to. Already restricting the set of sample plots used for modelling in this article provides the advantage that when used as an \textit{internal model} in design-based estimators, the regression model predictions already hold the assumption on the residuals to be zero on average for state and communal forest by construction of OLS technique (see amongst others Mandallaz 2013 \{Design-based properties of some small-area estimators in forest inventory with two-phase sampling. \textit{Canadian Journal of Forest Research}\}). We added this rational to the article (page 4, Line 254-264) to make the reason for restricting to state and communal forest more transparent. We also hope that this incorporates your question regarding the 'validity' of the model. It also has the huge advantage that we can refer to this article for details of the used regression model in our upcoming follow-up article that focuses much more on the application of the double-sampling estimation techniques.}
+  \answerfin{1) \underline{Restriction to state and communal forest area:} We indicated the reason for this in the Introduction (page 2 RHS, last paragraph): 'Our study is embedded in the current implementation of model-assisted regression estimators (Mandallaz, 2013a,b; Mandallaz et al, 2013) for estimating the standing timber volume within the state and communal forest management units over the entire state of Rhineland-Palatinate'. Actually, we use the 'final' regression model presented in this article as an internal model for model-assisted small area estimations of standing timber volume within 390 the state and communal forest management units in RLP (to be presented in our upcoming follow-up article). The state and communal forest area thus constitutes the sampling frame on which the regression model identified in this article is subsequently applied to. Already restricting the set of sample plots used for modelling to this sampling frame in this article provides the advantage that when used as an \textit{internal model} in design-based estimators, the regression model predictions already hold the assumption on the residuals to be zero on average for state and communal forest by construction of OLS technique (see amongst others Mandallaz 2013 \{Design-based properties of some small-area estimators in forest inventory with two-phase sampling. \textit{Canadian Journal of Forest Research}\}). We added this rational to the article (page 4, Line 254-264) to make the reason for restricting to state and communal forest more transparent. We also hope that this addresses your question regarding the 'validity' of the model. It also has the huge advantage that we can refer to this article for details of the used regression model in our upcoming follow-up article that focuses much more on the application of the double-sampling estimation techniques.}
   	
-  \answerfin{2) \underline{Forest ownerships in RLP:} We are not sure what the reviewer refers to as 'public' forest. We added some sentences describing the three forest ownership classes in RLP, i.e. 1) state forest, 2) communal forest and 3) private forest in section 2.1 'Study Area' in section 2.1 'Study Area', LHS line 184-186.}
+  \answerfin{2) \underline{Forest ownerships in RLP:} We are not sure what the reviewer refers to as 'public' forest. We added some sentences in section 2.1 'Study Area', LHS line 184-186 describing the three forest ownership classes in RLP, i.e. state forest, communal forest and private forest.}
    	
   \answerfin{3) \underline{Clipping of supports:} The clipping of supports at the forest boundary is a means to optimize the coherence between explanatory variables computed at the forest boundary and the corresponding terrestrial response variable, thereby optimizing the model fits for such observations (see Mandallaz et al. 2013 \{New regression estimators in forest inventories with two-phase sampling and partially exhaustive information: a design-based monte carlo approach with applications to small-area estimation\}). In the BWI3 survey, edge correction is applied at the forest border at the individual tree level. This means that sample trees whose inclusion circles are intersected with the forest border are assigned with a corrected (\textit{increased}) counting factor. This method is used to compensate for the fact that part of the trees inclusion circle is outside the forest area. Consequently, the terrestrially determined timber volume value of a sample plot with existing boundary effects would be underestimated if the edge correction was neglected. Now, as obvious from Figure 3b) (upper left support), the ALS mean canopy height will drop to around zero outside the forest area (i.e. beyond the forest border). Including these 'zero' height pixels when calculating the value of the mean canopy height for this plot will severely attenuate the mean canopy height value towards zero (this effect will increase with increasing proportion of the support lying outside the forest border). However, the terrestrially recorded timber volume value has been compensated for the edge effect by increased counting factors for the affected sample trees. Neglecting the boundary correction of the support would thus increase the discrepancy between the value of the explanatory variable (attenuated towards zero) and the terrestrial timber volume value (increased by corrected counting factors). An optimized comparability can thus be realized if we restrict the calculation of the mean canopy height to those height pixels lying within the forest border, thereby avoiding the attenuation towards zero. In our opinion, the proposed clipping-method thus indeed accounts very well for the edge correction in angle count sampling used in BWI3. We added a comment on this in section 2.3.1 'ALS Canopy Height Model', page 4 RHS, last paragraph line 315 - 322.}
   % --------------------------- %
@@ -175,7 +175,7 @@ Comments:\\
   % 10) ++++++++++++++++++++++++++ %
   \item \textit{The issue of using y-transformed models or not is of high importance. By discussing why g-weight variance is of important, this paper could contribute considerably to the discussion. In addition: How are negative predictions dealt with in practice? Set to 0?}
   
-  \answerfin{1) \underline{g-weight variance:} This is a very interesting hint and idea for our currently written follow-up article that actually deals with the design-based small area estimations in RLP. In fact, the application of the g-weight variances is a fundamental part of the upcoming study and we will incorporate your suggestion in this study. We thus only added a small comment in this article in section 3.3 'Interpretation of Final Regression Model' page 11 (LHS) line 732-743, and will discuss this issue in more detail in the follow-up article.}
+  \answerfin{1) \underline{g-weight variance:} This is a very interesting hint and idea for our currently written follow-up article that actually deals with the design-based small area estimations in RLP. In fact, the application of the g-weight variances is a fundamental part of the upcoming study and we will incorporate your suggestion in this study. We thus only added a small comment in this article in section 3.3 'Interpretation of Final Regression Model' page 11 (LHS) line 736-747, and will discuss this issue in more detail in the follow-up article.}
   
   \answerfin{2) \underline{negative predictions:} The purpose of this study was the identification of a best possible regression model to be integrated in the model-assisted estimators. We added a respective comment in section 3.3 'Interpretation of Final Regression Model' that rarely occurring negative predictions will most likely not have any influence on model-assisted estimates when multiple predictions are averaged over spatial domains.} 
   % --------------------------- %
@@ -184,7 +184,7 @@ Comments:\\
   % 11) ++++++++++++++++++++++++++ %
   \item \textit{P1,L44 RHS: Is Beaudoin et al really the right reference here? The concept is anyways much older and Næsset, E. (1997) {Estimating Timber Volume of Forest Stands Using Airborne Laser Scanner Data. Remote Sensing of Environment} should be considered.}
   
-  \answerfin{We revised the given reference of Beaudoin and now refer to the article of Brosofske et al. 2014 \{A review of methods for mapping and prediction of inventory attributes for operational forest management. \textit{ Forest Science, Society of American Foresters}\} who give a very nice and extensive review of applied mapping techniques in forestry, including various references to applications in the Nordic countries (page 1, 'Introduction', Line xx).  We also added a sentence particularly emphasizing the long history of timber volume prediction models with reference to Naesset 1997 \{Estimating timber volume of forest stands using airborne laser scanner data. \textit{Remote Sensing of Environment}\} (page 1 RHS, 'Introduction', Line 42).}
+  \answerfin{We revised the given reference of Beaudoin and now refer to the article of Brosofske et al. 2014 \{A review of methods for mapping and prediction of inventory attributes for operational forest management. \textit{ Forest Science, Society of American Foresters}\} who give a very nice and extensive review of applied mapping techniques in forestry, including various references to applications in the Nordic countries (page 1, 'Introduction', Line 42).  We also added a sentence particularly emphasizing the long history of timber volume prediction models with reference to Naesset 1997 \{Estimating timber volume of forest stands using airborne laser scanner data. \textit{Remote Sensing of Environment}\} (page 1 RHS, 'Introduction', Line 49-52).}
   % --------------------------- %
   
   
@@ -198,7 +198,7 @@ Comments:\\
   % 13) ++++++++++++++++++++++++++ %
   \item \textit{P2,L59: It may be of interest around that line that a variable describing deciduous proportion derived from leaf-off ALS data was used by Breidenbach et al. (2008) {Mixed-effects models for estimating stand volume by means of small footprint airborne laser scanner data. Photogrammetric Journal of Finland} to improve a model for timber volume.}
   
-  \answerfin{Thank you very much for drawing our attention to this article. We rephrased the respective section in the 'Introduction', page 2 RHS line 112-117 accordingly and now mention the study of Breidenbach et al. (2008). We also reference to this article in our 'Discussion' page 13 (line 807-813) and page 14 (line 874-878), as it nicely supports and complements several findings of our article.}
+  \answerfin{Thank you very much for drawing our attention to this article. We rephrased the respective section in the 'Introduction', page 2 RHS line 112-117 accordingly and now mention the study of Breidenbach et al. (2008). We also reference to this article in our 'Discussion' page 13 RHS (line 811-816) and page 14 LHS (line 877-886), as it nicely supports and complements several findings of our article.}
 
   % Internal note for me about Breidenbach et al. (2008):
   % - they provide a good explanation of mixed effect models! Read and understand for defense! Maybe try these models for our dataset to be able to discuss.
@@ -252,7 +252,7 @@ Comments:\\
   % 20) ++++++++++++++++++++++++++ %
   \item \textit{Please consider that the Conclusion is not an extension of the Discussion. Consider revising to shorten and to avoid references in the Conclusion}
   
-    \answerfin{We have completely revised the Conclusion by transferring some aspects (such as the photogrammetric CHM in RLP) to the section 'Discussion'. We significantly shortened the 'Conclusion' (section 5, page 15) and restrict to shortly present a conclusion of the three major findings of our article.}
+    \answerfin{We have completely revised the Conclusion by transferring some aspects (such as the photogrammetric CHM in RLP) to the section 'Discussion'. We significantly shortened the 'Conclusion' (section 5, page 15) and restrict to shortly present the three major conclusions of our article.}
   % --------------------------- %
   
   
@@ -287,7 +287,7 @@ Comments:\\
   % 25) ++++++++++++++++++++++++++ %
   \item \textit{Figure 7: (The fig appears after Fig 8.) The single panels are very small and difficult to read. Consider just showing one panel to exemplify.}
   
-   \answerfin{The order of the Figure 7 and Figure 8 has been corrected. We however would very much like to keep Figure 7 as is, because our intention was to show the different observation point clouds per ALS acquisition year at least once in the article (plotted in the background of each panel). We also wanted give the reader a visual impression of how well the tree species specific regression lines fit to the data in each ALS year. We hope the Reviewer can agree with our decision not to revise this Figure.}
+   \answerfin{The order of the Figure 7 and Figure 8 has been corrected. We however would very much like to keep Figure 7 as is, because our intention was to show the different observation point clouds per ALS acquisition year at least once in the article (plotted in the background of each panel). We also wanted give the reader a visual impression of how well the tree species specific regression lines fit to the data in each ALS year. For a better readability, we adjusted the graphic by removing the grey background and by increasing the contrast of the underlying data points. We hope the Reviewer can agree with our decision not to further revise this Figure.}
   % --------------------------- %
   
   
@@ -314,7 +314,7 @@ Comments:\\
  % 29) ++++++++++++++++++++++++++ %
   \item \textit{Eq1: are Y(x) and e(x) defined? Consider presenting table 2 close to eq 1 as the submodel names were undefined until table 2 was presented.}
   
-    \answerfin{The timber volume density Y(x) has been defined on page 4 LHS line 265-269, section 2.2 'Terrestrial Inventory data'. Additionally, the submodels are now described \textit{before} table 3 and Fig.8. We changed the letter $e$ to $\epsilon$ to use a common way to notate the error term of a OLS regression model.}
+    \answerfin{The timber volume density Y(x) has been defined on page 4 LHS line 265-269, section 2.2 'Terrestrial Inventory data'. Additionally, the submodels are now described \textit{before} table 2 (now table 3) and Fig.8. We changed the letter $e$ to $\epsilon$ to use a common way to notate the error term of a OLS regression model.}
   % --------------------------- %
   
   
@@ -328,7 +328,7 @@ Comments:\\
  % 31) ++++++++++++++++++++++++++ %
   \item \textit{P8L17-21, RHS: Discussion?}
   
-    \answerfin{We moved this sentence to the Discussion, section 4.2 'Calibration of Tree Sprecies Map Information', page 14 line 887-891.}
+    \answerfin{We moved this sentence to the Discussion, section 4.2 'Calibration of Tree Sprecies Map Information', page 14 line 891-895.}
  % --------------------------- %
   
  % 32) ++++++++++++++++++++++++++ %
@@ -354,7 +354,7 @@ Comments:\\
  % 1) ++++++++++++++++++++++++++ %
   \item \textit{P3 line 46 Column 2: Did you measure the absolute tree height of every sample tree, or was it a estimation according to the measurements of a sub-sample of tree?}
 
-  \answerfin{In fact, the height is \textit{measured} only for a subset of the sample trees at each plot. The height-values for the remaining sample trees are then \textit{estimated}. The taper functions however use the height-value a sample tree without distinction between 'measured' and 'estimated' as one of the explanatory variables. We rephrased the sentence accordingly (page 3-4, line 230-237).}
+  \answerfin{In fact, the height is \textit{measured} only for a subset of the sample trees at each plot. The height-values for the remaining sample trees are then \textit{estimated}. The taper functions however use the height-value of a sample tree without distinction between 'measured' and 'estimated' as one of the explanatory variables. We rephrased the sentence accordingly (page 3-4, section 'Terrestrial Inventory Data', line 230-237).}
  % --------------------------- %
 
  % 2) ++++++++++++++++++++++++++ %
@@ -446,14 +446,14 @@ Comments:\\
  % 15) ++++++++++++++++++++++++++ %	
 	\item \textit{P9 figure 6: Where do the different grey values refer to?}
 
-    \answerfin{We missed to mention that we used semi-transparent colour for the data points to visualize overlap, and to indicate where most of the calculated model accuracies are located in the plot. We added this information to the caption of Figure 6 page 10.}
+    \answerfin{We missed to mention that we used semitransparent colour for the data points to visualize overlap, and to indicate where most of the calculated model accuracies are located in the plot. We added this information to the caption of Figure 6 page 10.}
  % --------------------------- %
 
 	
  % 16) ++++++++++++++++++++++++++ %	
 	\item \textit{P10 figure 8:  I recommend limiting the y-axis between 0.2 and 0.6. A legend is missing and should be added. The long title of the figure contains text, which should be included in the text and not in the title.}
 	
-    \answerfin{We changed the figure 8 (now page 13) with respect to your suggestions, removed the grey background and changed the colour scheme for a better visual distinction. We also moved the description of the displayed models into the text (section 3.3, 'Effect of Time-Lags and Heterogeneity in ALS Data', page 11 RHS, line 751-757).}
+    \answerfin{We changed the figure 8 (now page 13) with respect to your suggestions, removed the grey background and changed the colour scheme for a better visual distinction. We also moved the description of the displayed models into the text (section 3.3, 'Effect of Time-Lags and Heterogeneity in ALS Data', page 11 RHS, line 754-761).}
  % --------------------------- %
 	
  % 17) ++++++++++++++++++++++++++ %	
@@ -466,37 +466,36 @@ Comments:\\
  % 18) ++++++++++++++++++++++++++ %	
 	\item \textit{P12 Table2: 1) submodel 3 isn’t mentioned and explained in the text. 2) It isn’t possible to reconstruct how you get your amount of parameters for each model. In addition the amount of parameters isn’t discussed in the text. So I recommend either to explain (I would prefer) or to leave it out.}
 	
-    \answerfin{1) We now explicitly mention submodel 3 in section 'Effect of Time-Lags and Heterogeneity in ALS data' (page 11 RHS, line 751-757).}
+    \answerfin{1) We now explicitly mention submodel 3 in section 'Effect of Time-Lags and Heterogeneity in ALS data' (page 11 RHS, line 754-761).}
     
-    \answerfin{2) With respect to the amount of model parameters, the intention of giving the number of parameters in Table 2 (now Table 3) was to show the reader that expanding the model-terms comes with an increase in parameters to be fitted. We added a discussion of the number of parameters with respect to overfitting-problems in section 4 'Discussion', page 13 RHS line 821-826.\\  	
+    \answerfin{2) With respect to the amount of model parameters, the intention of giving the number of parameters in Table 2 (now Table 3) was to show the reader that expanding the model-terms comes with an increase in parameters to be fitted. We used this information to add a comment to overfitting-problems in section 4 'Discussion', page 13 RHS line 821-826.\\  	
     	
-    However, a detailed explanation (see below for a \textit{short} one) would in our opinion be beyond the scope of the article and in fact lead to a repetition of OLS regression theory, which is not the intention of the article. We assume that an interested reader should be able to reconstruct the amount of parameters after consulting one of the many available literature on OLS regression models. The number of categories (factor levels) for the $ALSyear$-variable and the $treespecies$-variable are repeatedly given in section 2.3.1, section 2.3.2, Figure 4, Figure 7 and Table 2). We thus think that a revision of table 3 is not justified.
+   In general, one gets the number of parameters of an OLS model by summing over the number of continuous variables, the number of categories of the continuous variables and the number of interaction variables. For the final model, this is 1 intercept + 3 main effects for continuous variables + 13 main effects for categorical variables + 22 interaction variables = 39 regression coefficients (parameters) to be fitted. We added this information in section 3.3 'Final Regression Model' RHS line 686-689. We however decided not to further explain how to reconstruct the number of parameters. This is because when reconstructing the number of parameters, one has to consider that the respective reference category is always incorporated in the respective main effect. This is due to the recoding-method used for setting up the design-matrix of an OLS regression model. We think that a detailed explanation of this would go beyond the scope of the article and in fact lead to a repetition of OLS regression theory, which is not the intention of the article. We assume that an interested reader should be able to reconstruct the amount of parameters after consulting one of the many available books on OLS regression models. For reconstruction, the number of categories (factor levels) for the $ALSyear$-variable and the $treespecies$-variable are repeatedly provided in section 2.3.1, section 2.3.2, Figure 4, Figure 7 and Table 2). We thus think that a revision of table 3 is not justified.
    
-    In general, one gets the number of parameters of an OLS model by:
-    \begin{itemize}
-    	\item continuous variables main effects: \# (number) of continuous variables 
-    	\item categorical variables main effects: sum \# of categories - 1 (for each categorical variable used in the model)
-    	\item interaction terms:
-    	   \begin{itemize}
-    	   	\item categorical-categorical: \# of categories of both variables - 2
-    	   	\item continuous-categorical: \# of categories - 1
-    	   	\item continuous-continuous: \# = 1
-    	   \end{itemize}
-    	\item Intercept: \#=1
-    \end{itemize}
-
-   For the final model, i.e. 3+13+21+1+1=\textbf{39}
-     \begin{itemize}
-	\item continuous variables main effects: \textbf{3} (meanheight, meanheight$^2$, stddev)
-	\item categorical variables main effects: 6-1 (treespecies) + 9-1(ALSyears) = 5+8=\textbf{13}
-	\item interaction terms
-	\begin{itemize}
-		\item categorical-categorical: -
-		\item continuous-categorical: 6-1=5 (meanheight-treespecies) + 9-1=8 (meanheight-ALSyears) + 9-1=8 (stddev-ALSyears) = \textbf{21}
-		\item continuous-continuous: \textbf{1} (meanheight-stddev)
-	\end{itemize}
-	\item Intercept: \textbf{1}
-      \end{itemize}
+%    \begin{itemize}
+%    	\item continuous variables main effects: \# (number) of continuous variables 
+%    	\item categorical variables main effects: sum \# of categories - 1 (for each categorical variable used in the model)
+%    	\item interaction terms:
+%    	   \begin{itemize}
+%    	   	\item categorical-categorical: \# of categories of both variables - 2
+%    	   	\item continuous-categorical: \# of categories - 1
+%    	   	\item continuous-continuous: \# = 1
+%    	   \end{itemize}
+%    	\item Intercept: \#=1
+%    \end{itemize}
+%
+%   For the final model, i.e. 3+13+21+1+1=\textbf{39}
+%     \begin{itemize}
+%	\item continuous variables main effects: \textbf{3} (meanheight, meanheight$^2$, stddev)
+%	\item categorical variables main effects: 6-1 (treespecies) + 9-1(ALSyears) = 5+8=\textbf{13}
+%	\item interaction terms
+%	\begin{itemize}
+%		\item categorical-categorical: -
+%		\item continuous-categorical: 6-1=5 (meanheight-treespecies) + 9-1=8 (meanheight-ALSyears) + 9-1=8 (stddev-ALSyears) = \textbf{21}
+%		\item continuous-continuous: \textbf{1} (meanheight-stddev)
+%	\end{itemize}
+%	\item Intercept: \textbf{1}
+%      \end{itemize}
   }
  % --------------------------- %
 	
@@ -530,7 +529,7 @@ The following changes affect the entire article:
 	
     \item At the suggestion of Reviewer\#1, we changed the terminology of LiDAR into ALS.
     
-    \item At the suggestion of Reviewer\#2, we removed the grey background in all Figures. We also changed the layout of Fig.4 and Fig.5 based on the suggestions of Reviewer\#2. These changes comprised: a) using flexible scales among the tree species groups in order to "zoom" in and make the displayed information better to distinguish. We placed the legend on the bottom like suggested by Reviewer\#2. We also adapted the color-scheme to support the visual distinction
+    \item At the suggestion of Reviewer\#2, we removed the grey background in all Figures. We also changed the layout of Fig.4 and Fig.5 based on the suggestions of Reviewer\#2. These changes comprised: a) using flexible scales among the tree species groups in order to "zoom" in and make the displayed information better to distinguish. We placed the legend on the bottom like suggested by Reviewer\#2. We also adapted the color-scheme to support the visual distinction.
     
     \item Additional to $RMSE_{cv}$ or $RMSE$, we now also calculated $RMSE_{cv}[\%]$ and $RMSE[\%]$. These values have respectively been added in the supplementary data tables (Table 2 and 3) as well as given in Table 1 in the article instead of SSE (requested by Reviewer\#2). We also decided to map the $RMSE_{cv}[\%]$ instead of $RMSE_{cv}$ in Fig. 5 (right). We also added the RMSE-formulas in section 2.5 'Model Building and Evaluation'.
 
@@ -542,7 +541,7 @@ The following text-sections have been subject to changes and/or adjustments:
 
 \begin{enumerate}
 	
-	\item Page 1, RHS, line 42: We added the Chapter to reference 'Mandallaz 2008', as as suggested by Reviewer\#1.
+	\item Page 1, RHS, line 42: We added the Chapter-information to reference 'Mandallaz 2008', as suggested by Reviewer\#1.
 	
 	\item Page 1, RHS, line 42: We substituted the reference of Brosofske et al. 2014 for Beaudoin et al. 2014 as suggested by Reviewer\#1.
 	
@@ -572,13 +571,13 @@ The following text-sections have been subject to changes and/or adjustments:
 	
 	\item Page 7, LHS, line 522: We changed the title of the section according to the recommendation of Reviewer\#2.
 	
-	\item Page 7, LHS, line 523-529: We rephrased the sentence as suggested by Reviewe\#2.
+	\item Page 7, LHS, line 523-529: We rephrased the sentence as suggested by Reviewer\#2.
 	
 	\item Page 7, RHS, Figure 3 b): Now showing the \textit{circular} supports.
 	
 	\item Page 7, RHS, line 558: due to the use of circular supports,  the sample size of the modelling dataset changed to 5171 as the number of missing treespecies plots changed to 411. 
 	
-	\item Page 7, RHS, bottom: We added the formulas of RMSE.
+	\item Page 7, RHS, bottom: We added the formulas for RMSE.
 	
 	\item Page 8, LHS, top: We changed the error term of the OLS regression model from $e$ to $\varepsilon$ in order to stick to a more common notation.
 	
@@ -592,19 +591,21 @@ The following text-sections have been subject to changes and/or adjustments:
 	
 	\item Page 9, RHS, line 658-660: We moved the explanation why two distinct point clouds are visible in Fig.6 (page 10) to this section, as suggested by Reviewer\#1.
 	
-	\item Page 9, line 662-663: residual inflation of the R$^2$ is now given in percentage points rather than in \%.
+	\item Page 9, RHS, line 662-663: residual inflation of the R$^2$ is now given in percentage points rather than in \%.
 	
-	\item Page 9/11, RHS/LHS line 686-699: Based on questions of Reviewer\#1, we provide details of an leverage/outlier analyis of the final regression model and provide the reasons why no plots except the 'zero-plots' were removed from the modeling dataset. 
+	\item Page 9, RHS, line 686-689: Recommended by Reviewer\#2, we reconstruct the number of parameters used in the final model (table 3). 
+	
+	\item Page 9/11, RHS/LHS line 690-707: Based on questions of Reviewer\#1, we provide details of an leverage/outlier analysis of the final regression model and provide the reasons why no plots except the 'zero-plots' were removed from the modeling dataset. 
 	
 	\item Page 10, Fig 5 and Fig 6: The layout was changed according to recommendations of both Reviewers. 
 	
-	\item Page 11, LHS, line 732-743: Based on comments of Reviewer\#1, we extended the reason why no log-transformation of the response variable was applied.
+	\item Page 11, LHS, line 736-747: Based on comments of Reviewer\#1, we extended the reason why no log-transformation of the response variable was applied.
 	
-	\item Page 11, RHS, line 751-757: Comments on each submodel given in Table 3 (page 12) were added based on comments of Reviewer\#2.
+	\item Page 11, RHS, line 754-761: Comments on each submodel given in Table 3 (page 12) were added based on comments of Reviewer\#2.
 	
 	\item Page 11, RHS, Table 2: We added the area of each ALS acquisition for which the derived model accuracies are valid. We also added the RMSE\% as suggested by Reviewer\#2.
 	
-	\item Page 11, RHS, line 771-778: Updated based on recalculations (circular supports).
+	\item Page 11, RHS, line 775-782: Updated based on recalculations (circular supports).
 	
 	\item Page 12, Fig 7:  Updated based on recalculations (circular supports). Layout changed based on recommendations of Reviewer\#2.
 	
@@ -612,13 +613,13 @@ The following text-sections have been subject to changes and/or adjustments:
 	
 	\item Page 13, Fig 8: We changed the Layout according to suggestions of both Reviewers.
 	
-	\item Page 13 \& 14, LHS/RHS, line 797-815, 831-833, 836-849, 873-882: As requested by Reviewer\#1, we compare and discuss our findings with 4 similar studies carried out in central Europe, i.e. Latifi et al. 2012, Breidenbach et al. 2008, Maak et al. 2016, and Kirchhoefer et al. 2017.
+	\item Page 13 \& 14, LHS/RHS, line 800-819, 834-837, 840-853, 877-886: As requested by Reviewer\#1, we compare and discuss our findings with 4 similar studies carried out in central Europe, i.e. Latifi et al. 2012, Breidenbach et al. 2008, Maak et al. 2016, and Kirchhoefer et al. 2017.
 	
-	\item Page 13, RHS, line 821-826: Based on questions of Reviewer\#1, we comment on potential overfitting issues.
+	\item Page 13, RHS, line 825-829: Based on questions of Reviewer\#1, we comment on potential overfitting issues.
 	
-	\item Page 14, LHS, line 883-891: As recommended by Reviewer\#1, we moved this sentence from the 'Results'-section to the 'Discussion'.
+	\item Page 14, LHS, line 891-895: As recommended by Reviewer\#1, we moved this sentence from the 'Results'-section to the 'Discussion'.
 	
-	\item Page 14, LHS, line 925-968: We rephrased this section based on suggestions of Reviewer\#1 (we now also discuss our findings with the study of Kirchhoefer et al.).
+	\item Page 14, RHS, line 929-972: We rephrased this section based on suggestions of Reviewer\#1 (we now also discuss our findings with the study of Kirchhoefer et al.).
 	
 	\item Page 15, Conclusion: We completely rephrased the section 'Conclusion' based on the recommendation of Reviewer\#1. Basically, we tried to avoid the conclusion to be an extension of the Discussion.
 
