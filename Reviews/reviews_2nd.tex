@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage{authblk}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+%============================================ Define Titlepage & packages =============================================%
+
+\title{Review}
+
+\author{Combining canopy height and tree species map information for large scale timber volume estimations under strong heterogeneity of auxiliary data and variable sample plot sizes\\
+Andreas Hill, Henning Buddenbaum, Daniel Mandallaz}
+
+\usepackage{fancyhdr}     
+\usepackage{amsmath} %Paket für erweiterte math. Formeln
+\usepackage[labelfont=bf]{caption}
+\usepackage[font=footnotesize]{caption}
+\usepackage[font=footnotesize]{subcaption}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[final]{pdfpages}
+\usepackage{color}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=30mm,
+	bottom=30mm
+}
+
+\setlength{\parindent}{0em} % Einzug bei neuen Absätzen
+
+%------------------------------------------------------------------------------------------------%
+% -------------------------------------- Main Document------------------------------------------ %
+
+\begin{document}
+
+%------------------------------------------------------------------------------------------------%
+% -------------------------------------- Tex Settings ------------------------------------------ %
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\pagestyle{fancy} %Kopfzeile und Fusszeile
+\fancyfoot[C]{\thepage}
+\setlength{\headsep}{15mm}
+
+\definecolor{mybrown}{rgb}{0.6, 0.15, 0.1}
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\definecolor{mygreen}{rgb}{0.1, 0.4, 0.4}
+\newcommand{\answer}[1]{\small \color{mybrown}{#1} \color{black}}
+\newcommand{\note}[1]{\textit{\small \color{amaranth} \textbf{Note:} #1} \color{black}}
+\newcommand{\todo}[1]{\color{red}{#1} \color{black}}
+\newcommand{\answerfin}[1]{\small \color{mygreen}{#1} \color{black}}
+
+
+%------------------------------------------------------------------------------------------------%
+% ---------------------------------- Reviewer 1 ------------------------------------------------ %
+
+\section*{Reviewer 1:}
+
+This relevant and interesting study describes the development of a working/linking model to be used with model-supported estimators. The challenge of the study was the large spatial extent in combination with high resolution auxiliary variables and field data that resulted in severe inconsistencies that had to be handled. The applied approach is statistically rigorous and adequately described; the text is well written and clear.\\
+
+Comments:\\
+
+\begin{enumerate}
+
+  % 01) ++++++++++++++++++++++++++ %
+  \item \textit{Abstract: 'entire forest area' vs. state and communal forest further down.}
+  
+  \answerfin{Has been corrected to 'state and communal forest area'.}
+  % --------------------------- %
+  
+  
+  % 02) ++++++++++++++++++++++++++ %
+  \item \textit{The data here are special in the way that almost all ALS data were collected before the field data. Therefore no influential observations with seemingly large timber volume but low mean vegetation heights due to harvests after field measurement but before laser scanning exist. Those influential observations may need special treatment.}
+  
+  \answer{I don't understand ...}
+  % --------------------------- %
+  
+   % 03) ++++++++++++++++++++++++++ %
+   \item \textit{P6L58: Remind us: Regression model was the one for timber volume? Next sentence: Saved computation time compare to which alternative?
+   }
+   
+   \answerfin{It is the timber volume regression model (we added this information). We changed the two sentences into 'Using explanatory variables of the timber volume regression model also in the calibration model provided the advantage of reduced data storage compared to computing alternative variables for calibration'. We hope that this formulation depicts out line of argumentation more clearly. }
+   % --------------------------- %
+   
+   % 04) ++++++++++++++++++++++++++ %
+   \item \textit{P7L18 (and other places throughout the text): I do not seem to understand why the maximum limiting distance of 38m results in a radius of 76m. Should it be a diameter of 76m?   }
+   
+   \answerfin{Yes, it is the diameter. We corrected this accordingly.}
+    % --------------------------- %
+   
+   % 05) ++++++++++++++++++++++++++ %
+   \item \textit{  Eq. 3: consider replacing '*' with multiplication symbols. }
+   
+   \answerfin{Has been replaced.}
+   % --------------------------- %
+   
+   
+   % 06) ++++++++++++++++++++++++++ %
+   \item \textit{P8L17-40 part of the text is a bit hard to follow when reading just once or twice.}
+   
+  % \answerfin{}
+   % --------------------------- %
+   
+   % 07) ++++++++++++++++++++++++++ %
+	\item \textit{Fig. 4: Why is there a line for the 0\% threshold in the "Mixed" facet? 0\% threshold means that there is no mixed class?   }
+	
+	\answerfin{}
+	 % --------------------------- %
+
+
+   % 08) ++++++++++++++++++++++++++ %
+	\item \textit{Fig. 6: consider mentioning in the caption that each point of the graph represents a model with different supports etc.   }
+	
+	\answerfin{Good idea. We added this accordingly.}
+	 % --------------------------- %
+	
+	
+    % 09) ++++++++++++++++++++++++++ %
+	\item \textit{P11L17: timber volume prediction functions instead of tree species prediction functions?   }
+	
+	\answerfin{ We changed the sentence into 'Figure 7 provides a visualisation of the timber volume predictions separated by the calibrated tree species and the ALS acquisition years'.}
+	% --------------------------- %
+	
+	
+	% 09) ++++++++++++++++++++++++++ %
+	\item \textit{P13L49: more heterog… here or in the cited study?   }
+	
+	\answerfin{In the cited study. We added this to make it more clear.}
+	% --------------------------- %
+	
+	
+	% 10) ++++++++++++++++++++++++++ %
+	\item \textit{P13L12: It also… What is it referring to?   }
+	
+	\answerfin{We now repeat that 'it' refers to 'using the ALS acquisition years as categorical variables'.}
+	% --------------------------- %
+
+
+\end{enumerate} 
+  
+%------------------------------------------------------------------------------------------------%
+\end{document}
+
+
+
+
+
+
+
