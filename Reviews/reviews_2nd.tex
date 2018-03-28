@@ -3,10 +3,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+\usepackage[normalem]{ulem}
 
 %============================================ Define Titlepage & packages =============================================%
 
-\title{Review}
+\title{Review - 2nd revision}
 
 \author{Combining canopy height and tree species map information for large scale timber volume estimations under strong heterogeneity of auxiliary data and variable sample plot sizes\\
 Andreas Hill, Henning Buddenbaum, Daniel Mandallaz}
@@ -66,7 +67,7 @@ Andreas Hill, Henning Buddenbaum, Daniel Mandallaz}
 
 \section*{Reviewer 1:}
 
-This relevant and interesting study describes the development of a working/linking model to be used with model-supported estimators. The challenge of the study was the large spatial extent in combination with high resolution auxiliary variables and field data that resulted in severe inconsistencies that had to be handled. The applied approach is statistically rigorous and adequately described; the text is well written and clear.\\
+Thank you for this extensive review and an interesting paper. In my opinion, some parts are almost a bit too detailed, but this is a matter of taste.\\
 
 Comments:\\
 
@@ -82,14 +83,14 @@ Comments:\\
   % 02) ++++++++++++++++++++++++++ %
   \item \textit{The data here are special in the way that almost all ALS data were collected before the field data. Therefore no influential observations with seemingly large timber volume but low mean vegetation heights due to harvests after field measurement but before laser scanning exist. Those influential observations may need special treatment.}
   
-  \answer{I don't understand ...}
+  \answerfin{We are not sure whether we understand the reviewers intention here. It is right that such cases do in fact not appear in our data. For this reason, we consider any revision or mentioning in our article with respect to the issue not justified. We can however say that we are going to discuss the treatment of influential data points in the design-based inventory framework in more detail in our follow-up study.}
   % --------------------------- %
   
    % 03) ++++++++++++++++++++++++++ %
    \item \textit{P6L58: Remind us: Regression model was the one for timber volume? Next sentence: Saved computation time compare to which alternative?
    }
    
-   \answerfin{It is the timber volume regression model (we added this information). We changed the two sentences into 'Using explanatory variables of the timber volume regression model also in the calibration model provided the advantage of reduced data storage compared to computing alternative variables for calibration'. We hope that this formulation depicts out line of argumentation more clearly. }
+   \answerfin{It is the timber volume regression model (we added this information). We changed the two sentences into 'Using explanatory variables of the timber volume regression model in the calibration model provided the advantage of reduced data storage compared to computing alternative variables for calibration'. We hope that this formulation depicts our line of argumentation more clearly. }
    % --------------------------- %
    
    % 04) ++++++++++++++++++++++++++ %
@@ -108,13 +109,13 @@ Comments:\\
    % 06) ++++++++++++++++++++++++++ %
    \item \textit{P8L17-40 part of the text is a bit hard to follow when reading just once or twice.}
    
-  % \answerfin{}
+   \answerfin{Thanks for the hint. We rephrased the section and hope that the explanation is more straightforward now.}
    % --------------------------- %
    
    % 07) ++++++++++++++++++++++++++ %
-	\item \textit{Fig. 4: Why is there a line for the 0\% threshold in the "Mixed" facet? 0\% threshold means that there is no mixed class?   }
+	\item \textit{Fig. 4: Why is there a line for the 0\% threshold in the 'Mixed' facet? 0\% threshold means that there is no mixed class?}
 	
-	\answerfin{}
+	\answerfin{Under a threshold of 0\%, the 'Mixed' class is assigned if two or more tree species share the same proportion (e.g. 50\% spruce and 50\% beech).}
 	 % --------------------------- %
 
 
